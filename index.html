@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TJ HOSA — Future Health Professionals at TJHSST</title>
+<meta name="description" content="TJ HOSA is the new HOSA–Future Health Professionals chapter at Thomas Jefferson High School for Science and Technology. Competitions, clinical skills, service. Starting 2026–27.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F4F1EA">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TJ HOSA">
+<meta property="og:url" content="https://tjhosa.com">
+<meta property="og:title" content="TJ HOSA — Future Health Professionals at TJHSST">
+<meta property="og:description" content="Our new chapter of HOSA, the national student org for people going into health. Competitions, clinical skills, service. Starting 2026–27.">
+<meta property="og:image" content="https://tjhosa.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TJ HOSA — Future Health Professionals at Thomas Jefferson HSST">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TJ HOSA — Future Health Professionals at TJHSST">
+<meta name="twitter:description" content="Our new chapter of HOSA, the national student org for people going into health. Competitions, clinical skills, service. Starting 2026–27.">
+<meta name="twitter:image" content="https://tjhosa.com/og-image.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23A32319'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23F4F1EA' text-anchor='middle'>H</text></svg>">
+
+<style>
+/* ===========================================================
+   TJ HOSA
+   Two-colour print: black ink + one red on uncoated stock.
+   Serif for reading, mono for data. No third colour anywhere.
+   =========================================================== */
+
+:root{
+  --paper:#F4F1EA;
+  --paper-2:#FAF8F3;
+  --ink:#16181A;
+  --ink-2:#4A5057;
+  --rule:#CFC8BA;
+  --rule-2:#E3DDD0;
+  --red:#A32319;
+  --red-d:#83180F;
+
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+
+  --gut:clamp(20px,5.6vw,40px);
+  --measure:63ch;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:18px;
+  line-height:1.58;
+  -webkit-font-smoothing:antialiased;
+  font-kerning:normal;
+}
+
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.14;margin:0;letter-spacing:-.012em}
+p{margin:0 0 .95em;max-width:var(--measure)}
+p:last-child{margin-bottom:0}
+strong{font-weight:600}
+
+a{color:var(--red-d);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--red)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:9;background:var(--ink);color:var(--paper);padding:14px 20px;font-family:var(--mono);font-size:13px;text-decoration:none}
+.skip:focus{left:0}
+
+/* mono data type -------------------------------------------- */
+.m{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;line-height:1.5;
+  letter-spacing:.19em;text-transform:uppercase;color:var(--ink-2);
+  margin:0 0 18px;
+}
+
+/* layout ----------------------------------------------------- */
+.wrap{max-width:1020px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+section{border-top:1px solid var(--rule)}
+.col{max-width:var(--measure)}
+
+/* deliberately uneven vertical rhythm */
+.s-what{padding:clamp(44px,10vw,76px) 0}
+.s-who{padding:clamp(44px,10vw,76px) 0 clamp(52px,12vw,88px)}
+.s-events{padding:clamp(48px,11vw,88px) 0}
+.s-beyond{padding:clamp(40px,9vw,64px) 0}
+.s-why{padding:clamp(52px,12vw,96px) 0}
+.s-logistics{padding:clamp(40px,9vw,60px) 0}
+.s-faq{padding:clamp(44px,10vw,72px) 0 clamp(56px,13vw,96px)}
+
+h2{font-size:clamp(25px,6vw,33px);max-width:22ch;margin-bottom:.6em}
+h3{font-size:19px;letter-spacing:-.005em}
+
+.note{color:var(--ink-2);font-size:16.5px}
+
+/* ============ MASTHEAD / HERO ============ */
+.mast{padding:clamp(22px,6vw,38px) 0 clamp(38px,9vw,64px)}
+.mast__rule{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  border-bottom:2px solid var(--ink);padding-bottom:9px;margin-bottom:clamp(30px,8vw,52px)}
+.mast__name{font-family:var(--mono);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.mast__status{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+h1{
+  font-size:clamp(33px,8.2vw,54px);
+  letter-spacing:-.022em;
+  max-width:19ch;
+  text-wrap:balance;
+}
+.mast__sub{margin-top:22px;font-size:clamp(17.5px,4.4vw,20px);color:var(--ink-2);max-width:52ch}
+.mast__sub b{color:var(--ink);font-weight:600}
+
+/* CTA — a typeset block, not a floating card */
+.cta{
+  display:inline-block;
+  margin-top:30px;
+  background:var(--red);color:#fff;
+  font-family:var(--mono);font-size:14px;font-weight:600;
+  letter-spacing:.09em;text-transform:uppercase;
+  padding:16px 30px;text-decoration:none;
+  border:none;min-height:52px;line-height:1.4;
+  transition:background .15s linear;
+}
+.cta:hover{background:var(--red-d);color:#fff}
+.cta:active{background:#6E1309}
+.cta__after{display:block;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--ink-2);letter-spacing:.02em}
+
+/* ============ RUN-IN DATA STRIP ============ */
+.strip{
+  margin:26px 0 0;padding:12px 0;max-width:none;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  font-family:var(--mono);font-size:12.5px;line-height:2;letter-spacing:.02em;
+  color:var(--ink-2);
+}
+.strip b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.strip i{font-style:normal;color:var(--rule);padding:0 6px}
+
+/* ============ INDEX LIST (who it's for) ============ */
+.index{margin:0;padding:0;list-style:none;max-width:var(--measure)}
+.index li{padding:13px 0;border-bottom:1px solid var(--rule-2)}
+.index li:first-child{border-top:1px solid var(--rule-2)}
+.index b{font-weight:600}
+.index span{color:var(--ink-2)}
+
+/* ============ EVENT CATEGORIES ============ */
+.ev{margin:0;padding:0;list-style:none}
+.ev > li{padding:20px 0;border-bottom:1px solid var(--rule-2)}
+.ev > li:first-child{border-top:1px solid var(--rule)}
+.ev h3{margin-bottom:7px}
+.ev p{font-size:16.5px;color:var(--ink-2);margin-bottom:9px}
+.ev .egs{font-family:var(--mono);font-size:12.5px;line-height:1.75;color:var(--ink-2);margin:0;max-width:none}
+.ev .egs b{color:var(--ink);font-weight:400}
+
+/* ============ PROGRESSION ============ */
+.track{margin-top:clamp(38px,9vw,60px)}
+.track ol{list-style:none;margin:18px 0 0;padding:0}
+.track li{position:relative;padding:0 0 26px 34px;max-width:var(--measure)}
+.track li:last-child{padding-bottom:0}
+.track li::before{content:"";position:absolute;left:8px;top:20px;bottom:2px;width:1px;background:var(--rule)}
+.track li:last-child::before{display:none}
+.track .n{
+  position:absolute;left:0;top:2px;width:17px;height:17px;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink);border:1px solid var(--ink);border-radius:50%;background:var(--paper);
+}
+.track li.here .n{background:var(--red);border-color:var(--red);color:#fff}
+.track h3{font-size:17.5px;margin-bottom:4px}
+.track p{font-size:16px;color:var(--ink-2);margin:0}
+.track .when{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);display:block;margin-bottom:5px}
+.track li.here .when{color:var(--red)}
+.track .at{font-family:var(--mono);font-size:12px;color:var(--ink);display:block;margin-top:7px}
+
+/* ============ HANGING-LABEL BLOCKS ============ */
+.hang{margin:0;padding:0;list-style:none;max-width:var(--measure)}
+.hang li{padding:18px 0;border-bottom:1px solid var(--rule-2)}
+.hang li:first-child{border-top:1px solid var(--rule-2)}
+.hang h3{margin-bottom:6px}
+.hang p{font-size:16.5px;color:var(--ink-2);margin:0}
+
+/* ============ SPEC TABLE ============ */
+.spec{margin:0;max-width:var(--measure)}
+.spec div{display:grid;grid-template-columns:1fr;gap:2px 24px;padding:13px 0;border-bottom:1px solid var(--rule-2)}
+.spec div:first-child{border-top:1px solid var(--rule)}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);padding-top:3px}
+.spec dd{margin:0;font-size:17px}
+.spec dd small{display:block;font-size:15px;color:var(--ink-2);margin-top:4px;line-height:1.5}
+
+/* ============ FAQ ============ */
+.faq{max-width:var(--measure)}
+.faq details{border-bottom:1px solid var(--rule-2)}
+.faq details:first-of-type{border-top:1px solid var(--rule)}
+.faq summary{
+  list-style:none;cursor:pointer;position:relative;
+  padding:16px 34px 16px 0;
+  font-size:18px;font-weight:600;line-height:1.35;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:6px;top:24px;
+  width:8px;height:8px;
+  border-right:1.5px solid var(--red);border-bottom:1.5px solid var(--red);
+  transform:rotate(45deg);transform-origin:center;
+  transition:transform .16s ease;
+}
+.faq details[open] summary::after{transform:rotate(-135deg);top:27px}
+.faq .a{padding:0 0 20px}
+.faq .a p{font-size:16.5px;color:var(--ink-2)}
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink);color:var(--paper);border-top:none;padding:clamp(46px,11vw,84px) 0 34px}
+footer h2{color:var(--paper);max-width:15ch}
+footer p{color:#ACB2B8;max-width:48ch}
+footer .cta{background:var(--paper);color:var(--ink)}
+footer .cta:hover{background:#fff;color:var(--ink)}
+footer .cta__after{color:#8C949B}
+.colophon{
+  margin-top:clamp(38px,9vw,60px);padding-top:20px;border-top:1px solid #32373B;
+  font-family:var(--mono);font-size:11.5px;line-height:1.85;letter-spacing:.04em;color:#868E95;
+}
+.colophon a{color:#D3D8DC}
+.colophon a:hover{color:#fff}
+.colophon p{max-width:none;margin:0}
+
+/* ===========================================================
+   WIDER SCREENS — editorial grid: labels hang in the margin
+   =========================================================== */
+@media (min-width:560px){
+  .spec div{grid-template-columns:170px 1fr}
+  .spec dd small{margin-top:5px}
+}
+
+@media (min-width:900px){
+  body{font-size:18.5px}
+  .wrap{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 56px;align-items:start}
+  .wrap > *{grid-column:2}
+  .wrap > .eyebrow{grid-column:1;margin:0;padding-top:7px}
+  .mast .wrap{display:block}
+  h2{font-size:clamp(30px,3.1vw,36px)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===================== MASTHEAD ===================== -->
+<header class="mast">
+  <div class="wrap">
+    <div class="mast__rule">
+      <span class="mast__name">TJ&nbsp;HOSA</span>
+      <span class="mast__status">Chartering 2026&ndash;27</span>
+    </div>
+    <h1>You have to pick a career before you&rsquo;ve tried one.</h1>
+    <p class="mast__sub">
+      We&rsquo;re starting a chapter of <b>HOSA&ndash;Future Health Professionals</b> at TJ. It&rsquo;s the
+      national student organization for people headed into health, and it runs real competitions,
+      clinical skills training, and service. 225,000+ members, chapters in every state.
+      None of them were at TJ. Now one is.
+    </p>
+    <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeWeDPdzIPuWfVth4M1Y2ahHpI485O7pjNwQte28xmPsQBbIA/viewform">Get on the interest list</a>
+    <span class="cta__after">Name, grade, what you&rsquo;re curious about. That&rsquo;s the whole form.</span>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== WHAT IT IS ===================== -->
+<section class="s-what" aria-labelledby="h-what">
+  <div class="wrap">
+    <p class="eyebrow">What it is</p>
+    <div class="col">
+      <h2 id="h-what">A national organization, not a club somebody made up last spring.</h2>
+      <p>
+        HOSA is a CTSO, a Career and Technical Student Organization. That&rsquo;s the same official
+        category as DECA and FBLA, except every part of it is health. It has been running since 1976,
+        it&rsquo;s recognized by the U.S. Department of Education, and it holds competitions at the
+        regional, state, and international level that thousands of students train for all year.
+      </p>
+      <p>
+        Its stated mission is &ldquo;to empower HOSA&ndash;Future Health Professionals to become leaders
+        in the global health community through education, collaboration, and experience.&rdquo; What that
+        cashes out to: you learn actual health content, you get scored on it by people who work in the
+        field, and you spend the year around students who care about the same things you do.
+      </p>
+    </div>
+    <p class="strip"><b>225,000+</b> members <i>·</i> <b>51</b> chartered associations <i>·</i> founded <b>1976</b> <i>·</i> <b>60+</b> competitive events</p>
+    <p class="note" style="margin-top:16px;font-size:15px">
+      Every U.S. state has one, plus D.C., Puerto Rico, American Samoa, Canada, Germany, and Italy.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== WHO ===================== -->
+<section class="s-who" aria-labelledby="h-who">
+  <div class="wrap">
+    <p class="eyebrow">Who it&rsquo;s for</p>
+    <div class="col">
+      <h2 id="h-who">This is not the pre-med club.</h2>
+      <p>
+        Healthcare is close to a fifth of the U.S. economy and almost none of those jobs are
+        &ldquo;doctor.&rdquo; HOSA has competitive events across most of the field, so pick whichever
+        of these is closest to you:
+      </p>
+    </div>
+    <ul class="index">
+      <li><b>Bio and lab work.</b> <span>Biotechnology, Genetics, Clinical Laboratory Science, Pathophysiology. Heavy overlap with a TJ senior research lab.</span></li>
+      <li><b>Public health.</b> <span>Epidemiology, Public Health, World Health &amp; Disparities. Population level rather than patient level.</span></li>
+      <li><b>Biomedical engineering.</b> <span>Medical Innovation and Biomedical Equipment Technician. Build something, then defend the design to a judge.</span></li>
+      <li><b>Policy and pre-law.</b> <span>Medical Law &amp; Ethics, Extemporaneous Writing in health policy, Biomedical Debate.</span></li>
+      <li><b>Psych and neuro.</b> <span>Behavioral Health, Mental Health Promotion, Human Growth &amp; Development. Genuinely under-entered events, which works in your favor.</span></li>
+      <li><b>No idea yet.</b> <span>Fine. Finding out that the thing you assumed you wanted isn&rsquo;t the thing you want is most of the point.</span></li>
+    </ul>
+    <div class="col">
+      <p class="note" style="margin-top:26px">
+        <b>You don&rsquo;t need a health science class for this.</b> HOSA&rsquo;s secondary division covers
+        students enrolled in a health science program <em>or</em> students who are interested in and planning
+        to pursue a health career. TJ doesn&rsquo;t run a health science CTE pathway and it doesn&rsquo;t
+        need to.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EVENTS ===================== -->
+<section class="s-events" aria-labelledby="h-ev">
+  <div class="wrap">
+    <p class="eyebrow">Competition</p>
+    <div class="col">
+      <h2 id="h-ev">Pick one or two events. Get seriously good at those.</h2>
+      <p>
+        There are 60+ events across six categories. Five of them are scored head to head. The sixth
+        recognizes service and participation against a published standard instead of ranking you.
+        Nobody does all of them.
+      </p>
+    </div>
+    <ul class="ev">
+      <li>
+        <h3>Health Science</h3>
+        <p>Written exams. The closest thing to a subject test: you study a defined body of material and get ranked on it.</p>
+        <p class="egs"><b>Medical Terminology · Pathophysiology · Medical Math · Pharmacology · Nutrition · Medical Law &amp; Ethics</b></p>
+      </li>
+      <li>
+        <h3>Health Professions</h3>
+        <p>Hands-on clinical skill demos judged by people who do the job. You perform an actual procedure against an actual rubric.</p>
+        <p class="egs"><b>Clinical Nursing · Phlebotomy · Sports Medicine · Biotechnology · Veterinary Science · Physician Assistant</b></p>
+      </li>
+      <li>
+        <h3>Emergency Preparedness</h3>
+        <p>Response under time pressure. Some of this is just competence you should have anyway.</p>
+        <p class="egs"><b>CPR/First Aid · Emergency Medical Technician · Epidemiology · Public Health · CERT Skills</b></p>
+      </li>
+      <li>
+        <h3>Leadership</h3>
+        <p>Speaking, writing, and interviewing with a health angle. The events nobody signs up for and everybody needs.</p>
+        <p class="egs"><b>Prepared Speaking · Job Seeking Skills · Interviewing Skills · Extemporaneous Writing, Health Policy</b></p>
+      </li>
+      <li>
+        <h3>Teamwork</h3>
+        <p>Two to six people, one score. Where a new chapter can catch up fastest, because chemistry matters more than seniority.</p>
+        <p class="egs"><b>HOSA Bowl · Biomedical Debate · Medical Innovation · Forensic Science · Creative Problem Solving · Research Poster</b></p>
+      </li>
+      <li>
+        <h3>Recognition</h3>
+        <p>Not a ranking. You meet a published standard for service hours or the HOSA Service Project and you&rsquo;re recognized for it.</p>
+        <p class="egs"><b>Service and volunteer recognition · HOSA Service Project · Chapter awards</b></p>
+      </li>
+    </ul>
+
+    <div class="track">
+      <h3 style="font-size:15px;font-family:var(--mono);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)">How far it goes</h3>
+      <ol>
+        <li class="here">
+          <span class="n" aria-hidden="true">1</span>
+          <span class="when">All year</span>
+          <h3>Chapter</h3>
+          <p>Meetings at TJ. Pick an event, study with the people doing the same one, run practice rounds.</p>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">2</span>
+          <span class="when">Winter</span>
+          <h3>Northern Virginia regionals</h3>
+          <p>The Northern Virginia Regional Leadership Conference. First real competition. Top finishers move up.</p>
+          <span class="at">Northern Virginia · [REGIONAL_DATE]</span>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">3</span>
+          <span class="when">Spring</span>
+          <h3>Virginia State Leadership Conference</h3>
+          <p>Every HOSA chapter in Virginia, one hotel, three days. Top finishers qualify for internationals.</p>
+          <span class="at">Virginia · [VA_SLC_DATE]</span>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">4</span>
+          <span class="when">June 2027</span>
+          <h3>International Leadership Conference</h3>
+          <p>Thousands of members from across the U.S. and abroad. Competition, workshops, scholarships.</p>
+          <span class="at">Philadelphia · June 22&ndash;25, 2027</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BEYOND ===================== -->
+<section class="s-beyond" aria-labelledby="h-beyond">
+  <div class="wrap">
+    <p class="eyebrow">The rest of the year</p>
+    <div class="col">
+      <h2 id="h-beyond">Conferences are three weekends. Everything else is the other thirty weeks.</h2>
+    </div>
+    <ul class="hang">
+      <li>
+        <h3>Service</h3>
+        <p>Blood drives, clinic and senior-center volunteering, health screenings, and the national HOSA Service Project. Arranged as a group, so you aren&rsquo;t cold-emailing hospitals alone at 11pm.</p>
+      </li>
+      <li>
+        <h3>Speakers</h3>
+        <p>Physicians, nurses, PAs, EMTs, researchers, public health staff, and TJ alumni now in med school. Including the parts of the job nobody posts about.</p>
+      </li>
+      <li>
+        <h3>Workshops</h3>
+        <p>CPR and first aid, vitals, suturing practice, reading a chart, PPE and sterile technique. Things you do with your hands, not slides you sit through.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== WHY ===================== -->
+<section class="s-why" aria-labelledby="h-why">
+  <div class="wrap">
+    <p class="eyebrow">Why bother</p>
+    <div class="col">
+      <h2 id="h-why">Why bother</h2>
+      <p>
+        <b>You find out early.</b> Some people get to their second year of med school before
+        discovering they hate patient contact. Doing skill demos and talking to working clinicians at
+        sixteen is a much cheaper way to learn that about yourself, and an equally good way to confirm
+        it if you love it.
+      </p>
+      <p>
+        <b>It&rsquo;s specific.</b> Admissions officers have read a great deal of &ldquo;I shadowed a
+        doctor and it inspired me.&rdquo; Placing at the Virginia State Leadership Conference in
+        Pathophysiology, or running a CPR workshop for sixty people, is a different kind of sentence
+        because it has an outcome attached. HOSA runs its own scholarship program on top of that.
+      </p>
+      <p>
+        <b>You get the people.</b> Everyone here is interested in some corner of the same enormous
+        field. That means study partners in your event, teammates who actually show up, upperclassmen
+        who&rsquo;ve already done the applications, and a few hundred students from other Virginia
+        schools once you get to states.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LOGISTICS ===================== -->
+<section class="s-logistics" aria-labelledby="h-log">
+  <div class="wrap">
+    <p class="eyebrow">Logistics</p>
+    <div class="col">
+      <h2 id="h-log">What it costs and when we meet</h2>
+      <p class="note" style="margin-bottom:22px">First-year chapter, so a couple of these get finalized once we&rsquo;re chartered. Everything below is what we know now.</p>
+    </div>
+    <dl class="spec">
+      <div>
+        <dt>First meeting</dt>
+        <dd>[FIRST_MEETING_DATE]<small>Come to this one before deciding anything. Dues aren&rsquo;t due yet.</small></dd>
+      </div>
+      <div>
+        <dt>Meetings</dt>
+        <dd>Check ION for the latest meeting schedule</dd>
+      </div>
+      <div>
+        <dt>Time</dt>
+        <dd>[TIME_COMMITMENT]<small>Plus your own event prep, which scales with how seriously you take it. Conferences fall on weekends, not school days you&rsquo;d have to make up.</small></dd>
+      </div>
+      <div>
+        <dt>Dues</dt>
+        <dd>Approximately $25 for the year<small>Covers national and Virginia HOSA affiliation. Conference registration and travel are separate and optional. [FINANCIAL_AID_NOTE]</small></dd>
+      </div>
+      <div>
+        <dt>Affiliation link</dt>
+        <dd><a href="https://docs.google.com/forms/d/e/1FAIpQLSeWeDPdzIPuWfVth4M1Y2ahHpI485O7pjNwQte28xmPsQBbIA/viewform">Affiliation form</a><small>Virginia HOSA opens chapter affiliation on August 1, 2026 and closes it December 18, 2026. If you&rsquo;re not on our roster by then you can&rsquo;t compete this year.</small></dd>
+      </div>
+      <div>
+        <dt>Faculty advisor</dt>
+        <dd>Mike Roth</dd>
+      </div>
+      <div>
+        <dt>Student officers</dt>
+        <dd>TBD</dd>
+      </div>
+      <div>
+        <dt>Eligibility</dt>
+        <dd>Any TJ student, grades 9&ndash;12<small>No prerequisite courses, no application, no tryout.</small></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="s-faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <div class="col"><h2 id="h-faq">Questions you&rsquo;re actually asking</h2></div>
+    <div class="faq">
+      <details>
+        <summary>Is this just another resume club?</summary>
+        <div class="a">
+          <p>It can be, if you treat it that way, and that&rsquo;s true of every club at TJ. The difference is that HOSA has a standard set outside the school. You either place at regionals or you don&rsquo;t. A judge who works in the field either signs off on your skill demo or doesn&rsquo;t. That is harder to manufacture than an officer title.</p>
+          <p>If you want to show up, pay dues, and never compete, we&rsquo;ll take you and the speakers and workshops are worth it. But the good part is on the other side of picking an event.</p>
+        </div>
+      </details>
+      <details>
+        <summary>I&rsquo;m not pre-med. Should I even be here?</summary>
+        <div class="a">
+          <p>Yes. There are events in biomedical engineering, health policy, epidemiology, forensics, behavioral health, health informatics, and biotechnology. If your interest touches human health at any angle, including the data, the machines, the law, or the population, there&rsquo;s an event for it.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Do I need to be taking a health science class? TJ doesn&rsquo;t really have those.</summary>
+        <div class="a">
+          <p>No. HOSA&rsquo;s secondary division covers students in a health science program <em>or</em> students who are interested in and planning to pursue a career in the health professions. Plenty of chapters run out of schools with no health science CTE pathway. That&rsquo;s our situation and it&rsquo;s a normal one.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How much time is this actually going to take?</summary>
+        <div class="a">
+          <p>Baseline is [TIME_COMMITMENT] for meetings. That&rsquo;s the floor, and plenty of members stay there.</p>
+          <p>If you compete, add your own prep. A knowledge event like Medical Terminology is mostly flashcards on your own schedule. A skills event needs repeated practice with someone watching. A team event needs your team. Regionals is a day and states is about three, both on weekends, so they don&rsquo;t collide with a problem set due Tuesday.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Do I have to compete?</summary>
+        <div class="a">
+          <p>No. Service, speakers, and workshops run all year and are open to every member. The Recognition category isn&rsquo;t a ranking either: you meet a published standard for things like service hours and get recognized for it without ever going head to head.</p>
+        </div>
+      </details>
+      <details>
+        <summary>We&rsquo;re brand new. Are we going to get destroyed?</summary>
+        <div class="a">
+          <p>In some events, at first, probably. Chapters that have run for a decade have a bench and a filing cabinet of old prep material. We have neither yet.</p>
+          <p>So pick strategically in year one. Knowledge events reward individual study, so a motivated first-year competitor can place in one. Newer and less-entered events like behavioral health, health policy writing, and medical innovation have thinner fields than Medical Terminology. And a first-year chapter that sends three people to states is a real result, not a consolation prize.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What if I join and hate it?</summary>
+        <div class="a">
+          <p>Then you spent approximately $25 and a few hours ruling out a career path, which is a good trade at this age. Come to the first couple of meetings before dues are due and decide then. The interest form doesn&rsquo;t commit you to anything.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div>
+      <h2>Put your name down. Decide later.</h2>
+      <p>Name, grade, and what you&rsquo;re curious about. Under a minute, and it signs you up for
+        nothing. We&rsquo;ll send you the first meeting details and you can walk away after that with
+        no awkwardness at all.</p>
+      <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeWeDPdzIPuWfVth4M1Y2ahHpI485O7pjNwQte28xmPsQBbIA/viewform">Get on the interest list</a>
+      <span class="cta__after">Questions first is also fine. Email us.</span>
+
+      <div class="colophon">
+        <p>TJ HOSA · Thomas Jefferson High School for Science and Technology · Alexandria, Virginia</p>
+        <p><a href="mailto:TJHSSThosa@gmail.com">TJHSSThosa@gmail.com</a> · <a href="https://www.instagram.com/tjhsst__hosa/">@tjhsst__hosa</a></p>
+        <p><a href="https://hosa.org">hosa.org</a> · <a href="https://virginiahosa.org">virginiahosa.org</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
