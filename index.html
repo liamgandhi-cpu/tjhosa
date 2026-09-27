@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TJ HOSA — Future Health Professionals at Thomas Jefferson High School for Science and Technology</title>
-<meta name="description" content="The HOSA chapter at Thomas Jefferson High School for Science and Technology. Removed for lack of a qualifying course. Restored after TJ students helped pass Virginia SB 707. Open to every TJ student.">
+<meta name="description" content="The HOSA–Future Health Professionals chapter at Thomas Jefferson High School for Science and Technology. Competition, mentorship, research, and service for any TJ student interested in health. No prerequisites.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23142B4F'/%3E%3Crect x='13.5' y='6' width='5' height='20' fill='%23fff'/%3E%3Crect x='6' y='13.5' width='20' height='5' fill='%237A1C2B'/%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tjhosa.com">
 <meta property="og:title" content="TJ HOSA — Future Health Professionals">
-<meta property="og:description" content="The HOSA chapter at Thomas Jefferson High School for Science and Technology. Removed for lack of a qualifying course. Restored after TJ students helped pass Virginia SB 707. Open to every TJ student.">
+<meta property="og:description" content="The HOSA–Future Health Professionals chapter at Thomas Jefferson High School for Science and Technology. Competition, mentorship, research, and service for any TJ student interested in health. No prerequisites.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TJ HOSA — Future Health Professionals">
-<meta name="twitter:description" content="The HOSA chapter at Thomas Jefferson High School for Science and Technology. Removed for lack of a qualifying course. Restored after TJ students helped pass Virginia SB 707. Open to every TJ student.">
+<meta name="twitter:description" content="The HOSA–Future Health Professionals chapter at Thomas Jefferson High School for Science and Technology. Competition, mentorship, research, and service for any TJ student interested in health. No prerequisites.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,25 +178,13 @@ h1{
   font-weight:380;
 }
 
-/* statute anchor */
-.statute{
-  border-left:4px solid var(--maroon-bright);
-  padding:4px 0 4px 22px;
-  max-width:57ch;
-  margin:0 0 clamp(34px,5vw,44px);
+/* hero note */
+.hero-note{
+  font-family:var(--sans); font-size:.84rem; font-weight:500;
+  color:var(--pale); max-width:60ch; margin:0 0 clamp(30px,4.5vw,40px);
+  border-left:3px solid var(--maroon-bright); padding:2px 0 2px 14px;
 }
-.statute q{
-  display:block; quotes:none;
-  font-size:clamp(1.02rem,1.5vw,1.16rem);
-  line-height:1.5; color:#fff;
-}
-.statute cite{
-  display:block; margin-top:12px;
-  font-family:var(--sans); font-style:normal;
-  font-size:.79rem; font-weight:500; color:var(--pale);
-  letter-spacing:.012em;
-}
-.statute cite a{color:var(--pale)}
+.hero-note a{color:#fff}
 
 .hero-actions{display:flex; flex-wrap:wrap; gap:12px}
 
@@ -276,35 +264,6 @@ h1{
 }
 
 /* ?????????????????????????????????????????????
-   Timeline
-   ????????????????????????????????????????????? */
-.timeline{list-style:none; margin:0; padding:0}
-.timeline li{
-  display:grid;
-  grid-template-columns:112px minmax(0,1fr);
-  column-gap:clamp(18px,3vw,34px);
-  padding:26px 0;
-  border-top:1px solid rgba(255,255,255,.16);
-}
-.timeline li:first-child{border-top:0; padding-top:0}
-.timeline .yr{
-  font-family:var(--sans); font-weight:700; font-size:1.16rem;
-  color:#fff; letter-spacing:-.02em; padding-top:1px;
-}
-.timeline .yr small{
-  display:block; font-weight:450; font-size:.76rem;
-  color:#8298B8; letter-spacing:.01em; margin-top:4px;
-}
-.timeline h3{color:#fff; margin-bottom:9px}
-.timeline p{color:#CBD7E8; max-width:56ch; font-size:1rem}
-.timeline .now .yr{color:#F2A9B4}
-.timeline .now h3{color:#F2A9B4}
-@media (max-width:640px){
-  .timeline li{grid-template-columns:1fr; row-gap:10px}
-  .timeline .yr small{display:inline; margin-left:10px}
-}
-
-/* ?????????????????????????????????????????????
    Offer list (What you get)
    ????????????????????????????????????????????? */
 .offer{
@@ -373,7 +332,7 @@ h1{
    ????????????????????????????????????????????? */
 .pathway{
   list-style:none; margin:40px 0 0; padding:0;
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   border-top:2px solid var(--rule-dark);
 }
 .pathway li{padding:22px 22px 24px 0}
@@ -449,6 +408,39 @@ h1{
 }
 
 /* ?????????????????????????????????????????????
+   Who it's for
+   ????????????????????????????????????????????? */
+.interests{list-style:none; margin:32px 0 0; padding:0; border-top:2px solid var(--rule-dark)}
+.interests li{
+  padding:18px 0; border-bottom:1px solid var(--rule);
+  display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);
+  column-gap:clamp(20px,3vw,40px); align-items:start;
+}
+.interests h4{color:var(--navy); font-size:1.04rem}
+.interests p{font-size:.98rem; color:#2A3542; margin:0}
+.interests small{display:block; margin-top:6px; font-family:var(--sans); font-size:.8rem; font-weight:500; color:var(--maroon)}
+@media (max-width:760px){ .interests li{grid-template-columns:1fr; row-gap:6px} }
+
+/* ?????????????????????????????????????????????
+   FAQ
+   ????????????????????????????????????????????? */
+.faq{border-top:2px solid var(--rule-dark); max-width:72ch}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{
+  font-family:var(--sans); font-weight:600; font-size:1.04rem; color:var(--navy);
+  padding:18px 32px 18px 0; cursor:pointer; list-style:none; position:relative;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+"; position:absolute; right:4px; top:14px;
+  font-size:1.4rem; font-weight:400; color:var(--maroon);
+}
+.faq details[open] summary::after{content:"–"}
+.faq summary:focus-visible{outline:2px solid var(--maroon); outline-offset:2px}
+.faq details p{margin:0 0 16px; color:#2A3542; font-size:1rem}
+.faq details p:last-child{margin-bottom:22px}
+
+/* ?????????????????????????????????????????????
    Contact split
    ????????????????????????????????????????????? */
 .contact-grid{
@@ -511,10 +503,10 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
     <a class="wordmark" href="#top">TJ&nbsp;HOSA <span>Future Health Professionals</span></a>
     <nav class="mast-nav" aria-label="Sections">
       <a href="#chapter">The chapter</a>
-      <a href="#history">How we got back</a>
+      <a href="#who">Who it's for</a>
       <a href="#network">What you get</a>
       <a href="#compete">Compete</a>
-      <a href="#partners">Partners</a>
+      <a href="#faq">FAQ</a>
       <a class="mast-cta" href="#join">Join</a>
     </nav>
   </div>
@@ -529,15 +521,13 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
 
     <h1 class="reveal">HOSA is back at TJ.</h1>
 
-    <p class="hero-sub reveal">Our chapter was shut down because the state's #1 school for science and technology didn't offer the one course the rules required. TJ students didn't file an appeal. They went to Richmond and changed the law.</p>
+    <p class="hero-sub reveal">HOSA–Future Health Professionals is the national student organization for people headed into health. At TJ that means competition, mentorship from alumni in the field, research, and service, open to every student, grades 9–12, with no course prerequisites.</p>
 
-    <blockquote class="statute reveal">
-      <q>Each public middle school and high school may establish career and technical education student organizations, regardless of whether such school offers career and technical education courses.</q>
-      <cite>Virginia Code § 22.1-227.1, as amended by SB 707 — 2024 Acts of Assembly, ch. 776. Signed April 8, 2024. Effective July 1, 2024.</cite>
-    </blockquote>
+    <p class="hero-note reveal">The chapter returns after a 2024 change to Virginia law that TJ students helped pass. <a href="#history">The short version</a></p>
 
     <div class="hero-actions reveal">
       <a class="btn btn-primary" href="#join">Join the chapter</a>
+      <a class="btn btn-ghost" href="#faq">Questions</a>
       <a class="btn btn-ghost" href="#alumni">Alumni: reconnect</a>
       <a class="btn btn-ghost" href="#partners">Partner with us</a>
     </div>
@@ -568,46 +558,25 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
   </div>
 </section>
 
-<!-- ?????????????? HISTORY ?????????????? -->
-<section class="band band-dark on-dark" id="history">
+<!-- ?????????????? WHO IT'S FOR ?????????????? -->
+<section class="band band-tint" id="who">
   <div class="wrap">
-    <div class="rail">How we got back<em>A chapter, a rule, and a bill</em></div>
+    <div class="rail">Who it's for<em>Not just the pre-med crowd</em></div>
     <div class="col">
       <div class="section-head">
-        <h2>Removed on a technicality. Restored by statute.</h2>
+        <h2>This is not the pre-med club.</h2>
       </div>
-      <p class="section-intro lede" style="color:#D5DFEE">Most school clubs are founded. This one was re-founded — by students who read the rule that killed it, decided the rule was wrong, and got it rewritten for every public school in Virginia.</p>
+      <p class="section-intro lede">Health care is close to a fifth of the U.S. economy, and most of those jobs are not "doctor." HOSA has events across most of the field. Find the row closest to you.</p>
 
-      <ol class="timeline" style="margin-top:44px">
-        <li>
-          <div class="yr">Before<small>the rule change</small></div>
-          <div>
-            <h3>TJ had a HOSA chapter, and lost it.</h3>
-            <p>Virginia tied CTSO chapters to CTE course offerings. TJ didn't offer the qualifying health science course, so the chapter lost its charter — not for lack of interest, performance, or students headed into medicine, but for a line in an eligibility rule.</p>
-          </div>
-        </li>
-        <li>
-          <div class="yr">2023<small>the work begins</small></div>
-          <div>
-            <h3>Students took it to Richmond.</h3>
-            <p>Rather than lobby for one exception for one school, TJ students made the general case: a school's course catalog shouldn't determine whether its students can join a national professional organization. They researched the code section, built the argument, and found legislators willing to carry it.</p>
-          </div>
-        </li>
-        <li>
-          <div class="yr">2024<small>SB 707 becomes law</small></div>
-          <div>
-            <h3>Every public school in Virginia got the right.</h3>
-            <p>SB 707 amended § 22.1-227.1 to let any public middle or high school establish CTSOs regardless of its CTE course offerings. It was signed on April 8, 2024, became Chapter 776 of the Acts of Assembly, and took effect that July — opening HOSA, DECA, FBLA, TSA, SkillsUSA, FCCLA, and Educators Rising to schools that had been locked out.</p>
-          </div>
-        </li>
-        <li class="now">
-          <div class="yr">Now<small>chartered again</small></div>
-          <div>
-            <h3>TJ HOSA is open to every TJ student.</h3>
-            <p>No course prerequisite. No application. Freshmen through seniors, whether you are certain about medicine or just curious what the work actually looks like. The students who fixed the rule are handing the chapter to you.</p>
-          </div>
-        </li>
-      </ol>
+      <ul class="interests">
+        <li><h4>Bio and lab work</h4><p>Lab technique, disease mechanisms, and biochemistry. Heavy overlap with a TJ senior research lab.<small>Biomedical Laboratory Science · Pathophysiology · Biochemistry · Forensic Science</small></p></li>
+        <li><h4>Public health</h4><p>Populations rather than patients: outbreaks, prevention, and who gets care.<small>Epidemiology · Public Health · Community Awareness · Health Education</small></p></li>
+        <li><h4>Biomedical engineering</h4><p>Build something that solves a clinical problem, then defend the design to a judge.<small>Medical Innovation · Creative Problem Solving</small></p></li>
+        <li><h4>Policy and pre-law</h4><p>Ethics, regulation, and argument, written and spoken.<small>Medical Law and Ethics · Extemporaneous Writing — Health Policy · Biomedical Debate</small></p></li>
+        <li><h4>Psych and neuro</h4><p>Mind, behavior, and development. These events tend to draw thinner fields, which works in your favor.<small>Behavioral Health · Mental Health Promotion · Human Growth and Development</small></p></li>
+        <li><h4>Clinical and emergency care</h4><p>Hands-on skills judged by people who do the job, plus certifications worth having anyway.<small>Clinical Nursing · Sports Medicine · CPR / First Aid · Emergency Medical Technician</small></p></li>
+        <li><h4>No idea yet</h4><p>Fine. Finding out that the thing you assumed you wanted isn't the thing you want is most of the point, and it's much cheaper to learn at sixteen.</p></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -718,7 +687,7 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
         </div>
 
         <div class="panel" role="tabpanel" id="p-ld" aria-labelledby="t-ld" tabindex="0" hidden>
-          <p class="panel-desc">Individual events built on writing, speaking, and presenting. Health Policy extemporaneous writing is the natural home for anyone who found the SB 707 story interesting.</p>
+          <p class="panel-desc">Individual events built on writing, speaking, and presenting. Health Policy extemporaneous writing is the natural home for anyone drawn to law, government, or public health.</p>
           <ul class="chips">
             <li>Extemporaneous Writing — Health Policy</li><li>Prepared Speaking</li>
             <li>Researched Persuasive Writing and Speaking</li><li>Research Poster</li>
@@ -755,7 +724,12 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
           <p>Affiliate, pick your events, and prep with the chapter. Virginia HOSA opened 2026–27 affiliation on August 1 and closes it December 18, 2026.</p>
         </li>
         <li>
-          <span class="step">Winter into spring</span>
+          <span class="step">Winter</span>
+          <h4>Northern Virginia Regional Leadership Conference</h4>
+          <p>The first real competition of the season, against chapters from across the region. Date to be announced.</p>
+        </li>
+        <li>
+          <span class="step">Spring</span>
           <h4>Virginia State Leadership Conference</h4>
           <p>Online testing runs first, proctored locally. Competitors from across the Commonwealth meet for skills rounds, presentations, workshops, and the state officer election.</p>
         </li>
@@ -765,6 +739,32 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
           <p>Top state finishers advance. The 2027 ILC is in Philadelphia, June 22–25 — close enough to drive. Houston follows in 2028.</p>
         </li>
       </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ?????????????? YEAR-ROUND ?????????????? -->
+<section class="band" id="year">
+  <div class="wrap">
+    <div class="rail">The rest of the year<em>Service, speakers, workshops</em></div>
+    <div class="col">
+      <div class="section-head">
+        <h2>Conferences are a few weekends. Everything else is the other thirty weeks.</h2>
+      </div>
+      <div class="offer" style="margin-top:8px">
+        <article>
+          <h3>Service</h3>
+          <p>Blood drives, health screenings, volunteering, and the national HOSA Service Project, arranged as a group so you aren't cold-emailing hospitals alone at 11pm. Hours count toward the Recognition events.</p>
+        </article>
+        <article>
+          <h3>Speakers</h3>
+          <p>Physicians, nurses, PAs, EMTs, researchers, public health staff, and TJ alumni now in medical school, including the parts of the job nobody posts about.</p>
+        </article>
+        <article>
+          <h3>Workshops</h3>
+          <p>CPR and first aid, vitals, reading a chart, sterile technique. Things you do with your hands, not slides you sit through.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -818,7 +818,7 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
       <div class="join-grid" style="margin-top:36px">
         <div>
           <ul class="eligibility">
-            <li><strong>Any TJ student, grades 9–12.</strong> There is no course prerequisite. That is precisely what SB 707 changed.</li>
+            <li><strong>Any TJ student, grades 9–12.</strong> No course prerequisite, no application, no tryout.</li>
             <li><strong>No prior health science background.</strong> Most members arrive without one.</li>
             <li><strong>You do not have to compete to belong</strong> — but the members who compete get the most out of the year.</li>
             <li><strong>Undecided is fine.</strong> Plenty of members join to find out whether medicine is actually for them. Finding out early is worth a lot.</li>
@@ -830,7 +830,7 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
 
         <aside class="card">
           <h3>Chapter details</h3>
-          <p>Fill these in as the year is set, then share this page with your class.</p>
+          <p>For the 2026–27 year. A few details are still being finalized.</p>
           <dl>
             <dt>Meetings</dt>
             <dd>Check ION for the latest meeting schedule</dd>
@@ -852,8 +852,68 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
   </div>
 </section>
 
+<!-- ?????????????? FAQ ?????????????? -->
+<section class="band band-tint" id="faq">
+  <div class="wrap">
+    <div class="rail">Questions<em>The ones you're actually asking</em></div>
+    <div class="col">
+      <div class="section-head">
+        <h2>Questions you're actually asking.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>I'm not pre-med. Should I even be here?</summary>
+          <p>Yes. There are events in biomedical engineering, health policy, epidemiology, forensics, behavioral health, and lab science. If your interest touches human health at any angle, including the data, the machines, the law, or the population, there's an event for it.</p>
+        </details>
+        <details>
+          <summary>Do I need a health science class? TJ doesn't really have those.</summary>
+          <p>No. Any TJ student can join. HOSA's secondary division covers students who are interested in a health career, whether or not their school runs a health science program.</p>
+        </details>
+        <details>
+          <summary>Is this just another resume club?</summary>
+          <p>It can be, if you treat it that way, and that's true of every club at TJ. The difference is that HOSA's standard is set outside the school. You either place at a conference or you don't. A judge who works in the field either signs off on your skill demo or doesn't. That's harder to manufacture than an officer title.</p>
+        </details>
+        <details>
+          <summary>How much time does it take?</summary>
+          <p>Chapter meetings are the baseline; the schedule is posted on ION. If you compete, add your own prep. A knowledge event like Medical Terminology is mostly studying on your own schedule. A skills event needs repeated practice with someone watching. A team event needs your team. Conferences fall on weekends.</p>
+        </details>
+        <details>
+          <summary>Do I have to compete?</summary>
+          <p>No. Service, speakers, workshops, and mentorship are open to every member. The Recognition events aren't a ranking either: you meet a published standard for things like service hours and get recognized for it.</p>
+        </details>
+        <details>
+          <summary>What does it cost?</summary>
+          <p>Dues are approximately $25 for the year, covering national, state, and chapter affiliation. Conference registration and travel are separate. If cost is a problem, <a href="mailto:TJHSSThosa@gmail.com?subject=TJ%20HOSA%20dues">email the chapter</a>.</p>
+        </details>
+        <details>
+          <summary>When is the deadline to join?</summary>
+          <p>Virginia HOSA closes 2026–27 affiliation on December 18, 2026. You need to be on the chapter roster by then to compete this year. The affiliation form is in the chapter details above.</p>
+        </details>
+        <details>
+          <summary>What if I join and hate it?</summary>
+          <p>Then you spent a few hours ruling out a career path, which is a good trade at this age. Come to a couple of meetings before you decide.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ?????????????? HISTORY ?????????????? -->
+<section class="band band-dark on-dark" id="history">
+  <div class="wrap">
+    <div class="rail">How we got back<em>The short version</em></div>
+    <div class="col">
+      <div class="section-head">
+        <h2>Back after a rule change.</h2>
+      </div>
+      <p class="section-intro">TJ used to have a HOSA chapter. Virginia tied these organizations to career and technical education courses, and TJ didn't offer the qualifying health science course, so the chapter lost its charter. TJ students helped make the case for SB 707, which in 2024 let every public middle and high school in Virginia start one regardless of course offerings. That's why there are no prerequisites to join.</p>
+      <p class="section-intro" style="font-family:var(--sans); font-size:.85rem; color:var(--pale)"><a style="color:#fff" href="https://law.lis.virginia.gov/vacode/title22.1/chapter13/section22.1-227.1/">Va. Code § 22.1-227.1</a> · <a style="color:#fff" href="https://legiscan.com/VA/text/SB707/2024">SB 707 (2024), ch. 776</a></p>
+    </div>
+  </div>
+</section>
+
 <!-- ?????????????? ALUMNI / CONTACT ?????????????? -->
-<section class="band band-tint" id="alumni">
+<section class="band" id="alumni">
   <div class="wrap">
     <div class="rail">Get in touch<em>Alumni, advisors, partners, press</em></div>
     <div class="col">
@@ -875,7 +935,7 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
         </section>
         <section>
           <h3>Parents and press</h3>
-          <p>Questions about the chapter, chaperoning a conference, or the SB 707 story and what it has meant for schools across Virginia.</p>
+          <p>Questions about the chapter, dues and costs, chaperoning a conference, or a story you're working on.</p>
           <a class="btn btn-outline" href="mailto:TJHSSThosa@gmail.com?subject=TJ%20HOSA%20inquiry">Send a message</a>
         </section>
       </div>
@@ -889,17 +949,18 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
   <div class="foot-in">
     <div>
       <h4>TJ HOSA — Future Health Professionals</h4>
-      <p>The HOSA chapter at Thomas Jefferson High School for Science and Technology, chartered through Virginia HOSA. Open to every TJ student, by law.</p>
+      <p>The HOSA chapter at Thomas Jefferson High School for Science and Technology, chartered through Virginia HOSA. Open to every TJ student.</p>
     </div>
     <div>
       <h4>This page</h4>
       <ul>
         <li><a href="#chapter">The chapter</a></li>
-        <li><a href="#history">How we got back</a></li>
+        <li><a href="#who">Who it's for</a></li>
         <li><a href="#network">What you get</a></li>
         <li><a href="#compete">Compete</a></li>
         <li><a href="#partners">Partners</a></li>
         <li><a href="#join">Join</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
     <div>
@@ -908,13 +969,6 @@ footer a:hover{color:#fff; border-bottom-color:#fff}
         <li><a href="https://hosa.org">hosa.org</a></li>
         <li><a href="https://virginiahosa.org">Virginia HOSA</a></li>
         <li><a href="https://hosa.org/ilc/">International Leadership Conference</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>The law</h4>
-      <ul>
-        <li><a href="https://law.lis.virginia.gov/vacode/title22.1/chapter13/section22.1-227.1/">Va. Code § 22.1-227.1</a></li>
-        <li><a href="https://legiscan.com/VA/text/SB707/2024">SB 707 (2024), ch. 776</a></li>
       </ul>
     </div>
   </div>
