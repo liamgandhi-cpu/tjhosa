@@ -4,14 +4,772 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TJ HOSA</title>
+<meta name="description" content="TJ HOSA, the HOSA–Future Health Professionals chapter at Thomas Jefferson High School for Science and Technology. Opportunities, competition, and sign-ups in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  html, body { height: 100%; margin: 0; }
-  body { display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box;
-         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #222; background: #fff; text-align: center; }
-  @media (prefers-color-scheme: dark) { body { color: #eee; background: #111; } }
+:root{
+  --cream:#F6EEE2;
+  --paper:#FBF7F0;
+  --sand:#EADBC4;
+  --tan:#D6BE98;
+  --tan-deep:#B89A6C;
+  --clay:#B4562E;
+  --clay-deep:#94431F;
+  --sage:#6E7C59;
+  --sage-soft:#E3E6D6;
+  --gold:#C8923A;
+  --gold-soft:#F4E3C2;
+  --ink:#3A2A1E;
+  --ink-soft:#6B5848;
+  --rule:#E0D0B8;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --radius:16px;
+  --shadow:0 1px 2px rgba(58,42,30,.06),0 8px 24px rgba(58,42,30,.07);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.6}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0;letter-spacing:-.01em}
+p{margin:0 0 1em}
+a{color:var(--clay-deep)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--clay)}
+.muted{color:var(--ink-soft)}
+
+/* preview ribbon */
+.ribbon{background:var(--ink);color:var(--sand);font-size:.82rem;text-align:center;padding:7px 16px}
+.ribbon b{color:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.head{display:flex;align-items:center;gap:20px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex:0 0 auto}
+.mark{width:36px;height:36px;border-radius:50%;background:var(--clay);display:grid;place-items:center;color:#fff;font-family:var(--serif);font-weight:700;font-size:.95rem}
+.brand b{font-family:var(--serif);font-size:1.15rem}
+.brand small{display:block;font-size:.7rem;color:var(--ink-soft);margin-top:-3px}
+nav.tabs{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs a{padding:8px 13px;border-radius:999px;text-decoration:none;color:var(--ink-soft);font-weight:500;font-size:.92rem;white-space:nowrap}
+nav.tabs a:hover{background:var(--sand);color:var(--ink)}
+nav.tabs a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--rule);border-radius:10px;padding:8px 12px;font:inherit;color:var(--ink)}
+@media (max-width:900px){
+  .menu-btn{display:block}
+  nav.tabs{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--rule);padding:10px 16px 16px;margin:0}
+  nav.tabs.open{display:flex}
+  nav.tabs a{border-radius:10px}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .95rem var(--sans);padding:12px 22px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;text-decoration:none;transition:background .15s,transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-clay{background:var(--clay);color:#fff}
+.btn-clay:hover{background:var(--clay-deep)}
+.btn-line{background:transparent;border-color:var(--tan-deep);color:var(--ink)}
+.btn-line:hover{background:var(--sand)}
+.btn-sm{padding:8px 15px;font-size:.86rem}
+
+/* pages */
+main section.page{display:none;padding:48px 0 80px}
+main section.page.active{display:block}
+.page-head{margin-bottom:32px;max-width:720px}
+.page-head h1{font-size:clamp(2rem,4.4vw,3rem);margin:6px 0 12px}
+.page-head p{font-size:1.08rem;color:var(--ink-soft)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:20px 0 40px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.4rem);line-height:1.02;margin:12px 0 18px}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero p.lede{font-size:1.15rem;color:var(--ink-soft);max-width:52ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-card{background:var(--paper);border:1px solid var(--rule);border-radius:24px;padding:26px;box-shadow:var(--shadow)}
+.hero-card h3{font-size:1.15rem;margin-bottom:14px}
+.next-list{list-style:none;margin:0;padding:0}
+.next-list li{display:flex;gap:14px;padding:11px 0;border-top:1px dashed var(--rule)}
+.next-list li:first-child{border-top:0}
+.date-chip{flex:0 0 54px;text-align:center;background:var(--gold-soft);border-radius:12px;padding:6px 0;font-weight:700;line-height:1.1;color:var(--clay-deep)}
+.date-chip small{display:block;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.next-list b{display:block;font-size:.95rem}
+.next-list span{font-size:.85rem;color:var(--ink-soft)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:12px 0 56px}
+.stat{background:var(--paper);border:1px solid var(--rule);border-radius:var(--radius);padding:20px}
+.stat b{font-family:var(--serif);font-size:2.1rem;color:var(--clay);display:block;line-height:1}
+.stat span{font-size:.88rem;color:var(--ink-soft)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+.pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:20px}
+.pillar{background:var(--paper);border-radius:var(--radius);padding:20px;border-top:4px solid var(--tan)}
+.pillar:nth-child(2){border-top-color:var(--clay)}
+.pillar:nth-child(3){border-top-color:var(--sage)}
+.pillar:nth-child(4){border-top-color:var(--gold)}
+.pillar:nth-child(5){border-top-color:var(--ink)}
+.pillar h3{font-size:1.15rem;margin-bottom:6px}
+.pillar p{font-size:.9rem;color:var(--ink-soft);margin:0}
+@media (max-width:900px){.pillars{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.pillars{grid-template-columns:1fr}}
+
+.band{background:var(--sand);border-radius:28px;padding:40px;margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.band h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:10px}
+@media (max-width:760px){.band{grid-template-columns:1fr;padding:28px}}
+
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:56px 0 18px;flex-wrap:wrap}
+.section-title h2{font-size:clamp(1.5rem,3vw,2rem)}
+
+/* opportunities */
+.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+.howto div{background:var(--paper);border:1px solid var(--rule);border-radius:var(--radius);padding:18px}
+.howto h4{font-family:var(--sans);font-size:.95rem;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.howto p{font-size:.88rem;color:var(--ink-soft);margin:0}
+@media (max-width:760px){.howto{grid-template-columns:1fr}}
+
+.filters{position:sticky;top:66px;z-index:10;background:var(--cream);padding:12px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-bottom:1px solid var(--rule);margin-bottom:22px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--tan);background:var(--paper);color:var(--ink);padding:7px 14px;border-radius:999px;font:500 .86rem var(--sans);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--clay);border-color:var(--clay);color:#fff}
+.chip .n{opacity:.7;font-size:.78rem;margin-left:3px}
+.search{margin-left:auto;flex:1 1 220px;max-width:300px;border:1px solid var(--tan);background:var(--paper);border-radius:999px;padding:9px 16px;font:inherit;color:var(--ink)}
+select.search{flex:0 0 auto;max-width:none}
+@media (max-width:700px){.search{margin-left:0;max-width:none}}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 0 rgba(58,42,30,.03);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.card h3{font-size:1.08rem}
+.card .org{font-size:.84rem;color:var(--ink-soft)}
+.card p{font-size:.9rem;margin:0;color:var(--ink)}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tag{font-size:.74rem;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--sand);color:var(--ink-soft)}
+.tag.cat-Volunteering{background:var(--sage-soft);color:#4B5839}
+.tag.cat-Shadowing{background:#F3DCCF;color:var(--clay-deep)}
+.tag.cat-Research{background:#E4E0F0;color:#4D4473}
+.tag.cat-Programs{background:var(--gold-soft);color:#7A5517}
+.status{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.status.open{background:#DCEBD3;color:#355226}
+.status.soon{background:var(--gold-soft);color:#7A5517}
+.status.list{background:var(--sand);color:var(--ink-soft)}
+.status.closed{background:#EED6CE;color:var(--clay-deep)}
+.card .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px dashed var(--rule);padding-top:12px}
+.card .when{font-size:.84rem;font-weight:600;color:var(--clay-deep)}
+.empty{padding:40px;text-align:center;color:var(--ink-soft);background:var(--paper);border-radius:var(--radius)}
+.note-box{background:var(--paper);border:1px dashed var(--tan-deep);border-radius:var(--radius);padding:16px 20px;font-size:.9rem;color:var(--ink-soft);margin-top:18px}
+
+.fair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fair .card ul{margin:0;padding-left:1.1em;font-size:.92rem}
+@media (max-width:760px){.fair{grid-template-columns:1fr}}
+
+/* compete */
+.cat-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.events{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.ev{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:12px 14px;font-size:.92rem;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.ev .team{font-size:.7rem;font-weight:700;color:var(--sage);background:var(--sage-soft);padding:2px 7px;border-radius:999px}
+.leads{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:16px}
+.lead{background:var(--paper);border-radius:12px;padding:14px 16px;border-left:4px solid var(--clay)}
+.lead b{display:block}
+.lead span{font-size:.85rem;color:var(--ink-soft)}
+.season{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.season div{background:var(--paper);border-radius:var(--radius);padding:18px;border:1px solid var(--rule)}
+.season b{font-family:var(--serif);font-size:1.1rem;display:block;margin-bottom:4px}
+.season span{font-size:.88rem;color:var(--ink-soft)}
+@media (max-width:860px){.season{grid-template-columns:repeat(2,1fr)}}
+
+/* calendar */
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:27px;top:6px;bottom:6px;width:2px;background:var(--tan)}
+.timeline li{display:flex;gap:18px;padding:10px 0;position:relative}
+.timeline .date-chip{flex:0 0 56px;z-index:1;border:3px solid var(--cream)}
+.timeline .body{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:12px 16px;flex:1}
+.timeline .body b{display:block}
+.timeline .body span{font-size:.88rem;color:var(--ink-soft)}
+.month{font-family:var(--serif);font-size:1.3rem;margin:28px 0 6px 0;padding-left:76px}
+
+/* story */
+.story{display:grid;grid-template-columns:1fr 340px;gap:40px}
+.story article{font-size:1.06rem;max-width:66ch}
+.story article h2{font-size:1.6rem;margin:36px 0 12px}
+.story article h2:first-child{margin-top:0}
+.quote{font-family:var(--serif);font-size:1.4rem;line-height:1.35;background:var(--sand);border-left:5px solid var(--clay);border-radius:0 var(--radius) var(--radius) 0;padding:24px 28px;margin:24px 0}
+.quote small{display:block;font-family:var(--sans);font-size:.82rem;color:var(--ink-soft);margin-top:12px}
+.story aside{position:sticky;top:90px;align-self:start}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{padding:14px 18px;background:var(--paper);border-radius:12px;margin-bottom:10px;border:1px solid var(--rule)}
+.steps b{display:block;color:var(--clay);font-family:var(--serif);font-size:1.1rem}
+.steps span{font-size:.9rem}
+.placeholder{background:repeating-linear-gradient(45deg,var(--sand),var(--sand) 10px,var(--paper) 10px,var(--paper) 20px);border:1px dashed var(--tan-deep);border-radius:var(--radius);padding:30px;text-align:center;color:var(--ink-soft);font-size:.9rem;margin:20px 0}
+@media (max-width:900px){.story{grid-template-columns:1fr}.story aside{position:static}}
+
+/* hub */
+.hub{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.hub .card h3{display:flex;gap:10px;align-items:center}
+.ico{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--gold-soft);color:var(--clay-deep);flex:0 0 auto}
+.ico svg{width:20px;height:20px}
+
+/* team */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.person{background:var(--paper);border:1px solid var(--rule);border-radius:var(--radius);padding:18px;text-align:center}
+.avatar{width:64px;height:64px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:1.3rem;color:#fff}
+.person b{display:block}
+.person span{font-size:.85rem;color:var(--ink-soft)}
+.team-h{font-size:1.25rem;margin:30px 0 12px}
+
+/* join + faq */
+.join-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+@media (max-width:860px){.join-grid{grid-template-columns:1fr}}
+.checklist{list-style:none;margin:0;padding:0;counter-reset:s}
+.checklist li{counter-increment:s;display:flex;gap:14px;padding:14px 0;border-top:1px dashed var(--rule)}
+.checklist li::before{content:counter(s);flex:0 0 32px;height:32px;border-radius:50%;background:var(--clay);color:#fff;display:grid;place-items:center;font-weight:700}
+.fee{background:var(--ink);color:var(--sand);border-radius:24px;padding:28px}
+.fee h3{color:#fff;font-size:1.4rem;margin-bottom:12px}
+.fee table{width:100%;border-collapse:collapse;margin:10px 0 16px}
+.fee td{padding:8px 0;border-bottom:1px solid rgba(234,219,196,.2)}
+.fee td:last-child{text-align:right;font-weight:700;color:#fff}
+details{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--ink-soft)}
+
+/* modal */
+.modal-bg{position:fixed;inset:0;background:rgba(58,42,30,.45);display:none;align-items:center;justify-content:center;padding:16px;z-index:100}
+.modal-bg.open{display:flex}
+.modal{background:var(--paper);border-radius:22px;max-width:520px;width:100%;max-height:92vh;overflow:auto;padding:26px;box-shadow:0 20px 60px rgba(58,42,30,.3)}
+.modal h3{font-size:1.4rem;margin-bottom:4px}
+.modal .sub{font-size:.9rem;color:var(--ink-soft);margin-bottom:16px}
+.modal label{display:block;font-size:.85rem;font-weight:600;margin:12px 0 4px}
+.modal input,.modal select,.modal textarea{width:100%;border:1px solid var(--tan);background:#fff;border-radius:10px;padding:10px 12px;font:inherit;color:var(--ink)}
+.modal textarea{min-height:80px;resize:vertical}
+.modal .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modal .actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+.modal .info{background:var(--gold-soft);border-radius:10px;padding:10px 12px;font-size:.84rem;margin-top:8px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--ink);color:var(--paper);padding:12px 20px;border-radius:999px;font-size:.9rem;z-index:200;transition:transform .3s;max-width:calc(100% - 32px);text-align:center;opacity:0;visibility:hidden}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1;visibility:visible}
+
+footer{background:var(--ink);color:var(--sand);padding:44px 0 30px;font-size:.9rem}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer a{color:var(--sand)}
+footer h4{font-family:var(--sans);color:#fff;font-size:.9rem;margin-bottom:8px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:5px}
+footer .fine{border-top:1px solid rgba(234,219,196,.2);margin-top:30px;padding-top:16px;font-size:.78rem;opacity:.75}
+@media (max-width:760px){footer .cols{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<p>We're editing the website. Check back soon!</p>
+
+<div class="ribbon"><b>Design preview.</b> Sign-up buttons are mocked up and don't save anything yet.</div>
+
+<header>
+  <div class="wrap head">
+    <a class="brand" href="#home"><span class="mark">TJ</span><span><b>TJ HOSA</b><small>Future Health Professionals</small></span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="tabs">Menu</button>
+    <nav class="tabs" id="tabs">
+      <a href="#home">Home</a>
+      <a href="#opportunities">Opportunities</a>
+      <a href="#compete">Compete</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#hub">Member Hub</a>
+      <a href="#story">Our Story</a>
+      <a href="#team">Team</a>
+      <a href="#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- HOME -->
+<section class="page" id="home">
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Thomas Jefferson HS for Science and Technology</span>
+      <h1>Your way into <em>health</em> starts here.</h1>
+      <p class="lede">TJ HOSA is the chapter of HOSA–Future Health Professionals at TJ. We run competition prep, shadowing, research matches, volunteering and a health fair, and every sign-up goes through this site.</p>
+      <div class="cta">
+        <a class="btn btn-clay" href="#opportunities">Browse opportunities</a>
+        <a class="btn btn-line" href="#join">Join the chapter</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Coming up</h3>
+      <ul class="next-list" id="home-next"></ul>
+      <a class="btn btn-line btn-sm" href="#calendar" style="margin-top:12px">Full calendar</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b id="stat-opps">0</b><span>open opportunities with partners</span></div>
+    <div class="stat"><b>200</b><span>organizations our officers have contacted</span></div>
+    <div class="stat"><b id="stat-labs">0</b><span>research labs open to TJ students</span></div>
+    <div class="stat"><b>0</b><span>course prerequisites to join, thanks to SB 707</span></div>
+  </div>
+
+  <span class="eyebrow">What we do</span>
+  <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);margin-top:6px">Learn. Lead. Serve. Connect. Compete.</h2>
+  <div class="pillars">
+    <div class="pillar"><h3>Learn</h3><p>Guest speakers, simulations, and hands-on workshops in 8th period.</p></div>
+    <div class="pillar"><h3>Lead</h3><p>Run a committee, a service project, or one of our three signature events.</p></div>
+    <div class="pillar"><h3>Serve</h3><p>Group volunteering, a blood drive, and a community health fair.</p></div>
+    <div class="pillar"><h3>Connect</h3><p>Shadowing, research matches, and a health careers networking night.</p></div>
+    <div class="pillar"><h3>Compete</h3><p>Regionals in November, then States and the International Leadership Conference.</p></div>
+  </div>
+
+  <div class="band">
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>TJ students changed Virginia law to bring HOSA back.</h2>
+      <p class="muted">Our chapter lost its charter because of one line in an eligibility rule. In 2024, SB 707 changed that rule for every public school in the state.</p>
+      <a class="btn btn-clay" href="#story">Read the story</a>
+    </div>
+    <div class="quote" style="margin:0">“Each public middle school and high school may establish career and technical education student organizations, regardless of whether such school offers career and technical education courses.”<small>Va. Code § 22.1-227.1, as amended by SB 707 (2024)</small></div>
+  </div>
+
+  <div class="section-title"><h2>Three signature events</h2></div>
+  <div class="grid">
+    <div class="card"><span class="eyebrow">January · Saturday</span><h3>Community Health Fair</h3><p>Open to TJ families and the community, with 20–25 tables from health organizations. Every booth runs an interactive activity.</p><div class="foot"><span class="when">Date pending venue</span><button class="btn btn-line btn-sm" data-signup="fair-volunteer">Volunteer</button></div></div>
+    <div class="card"><span class="eyebrow">Winter–Spring</span><h3>Blood Drive</h3><p>Organized with the Red Cross at TJ. It also counts toward HOSA's Blood Drive recognition events.</p><div class="foot"><span class="when">Booking in progress</span><button class="btn btn-line btn-sm" data-signup="red-cross">Get notified</button></div></div>
+    <div class="card"><span class="eyebrow">Before winter break · 8th period</span><h3>Cross-Club Event</h3><p>A bioethics debate or tech-and-bio event run with NeuroSoc and the Bioinformatics Society.</p><div class="foot"><span class="when">Planning now</span><button class="btn btn-line btn-sm" data-signup="cross-club">Get notified</button></div></div>
+  </div>
+</section>
+
+<!-- OPPORTUNITIES -->
+<section class="page" id="opportunities">
+  <div class="page-head">
+    <span class="eyebrow">Opportunities board</span>
+    <h1>Every opportunity, one place.</h1>
+    <p>Officers have contacted 200 organizations. Everything listed here said yes or gave us a concrete next step. Pick one and sign up, and an officer will handle the rest.</p>
+  </div>
+
+  <div class="howto">
+    <div><h4><span class="tag">Slot</span> Claim a spot</h4><p>The chapter runs it. Sign up for a slot, and an officer confirms your spot by email.</p></div>
+    <div><h4><span class="tag">Match</span> Submit interest</h4><p>Send your interests and resume. Officers pick the best fit and make one introduction. Please don't email hosts yourself.</p></div>
+    <div><h4><span class="tag">Apply</span> Apply yourself</h4><p>You apply on your own. We post the deadline and send reminders.</p></div>
+  </div>
+
+  <div class="filters">
+    <div class="chips" id="cat-chips"></div>
+    <select class="search" id="type-filter" aria-label="Sign-up type">
+      <option value="">All sign-up types</option><option>Slot</option><option>Match</option><option>Apply</option>
+    </select>
+    <input class="search" id="opp-search" type="search" placeholder="Search: nutrition, GMU, summer…" aria-label="Search opportunities">
+  </div>
+
+  <div class="grid" id="opp-grid"></div>
+
+  <div class="note-box"><b>Still finding hosts:</b> dental (NVDS), hospital (SHAV), physical therapy (APTA VA), veterinary (VVMA), family physicians (VAFP), radiology, medical society, dosimetry, PA (VAPA), and urgent care (UVCA). <a href="#" data-signup="host-interest">Tell us which ones you want</a> so we know where to push.</div>
+
+  <div class="section-title"><h2>Health Fair tables</h2><span class="muted">We're waiting on a venue date</span></div>
+  <div class="fair">
+    <div class="card"><h3>Confirmed</h3><ul><li>Infinite Legacy</li><li>Hemophilia Association of the Capital Area</li><li>Brain Injury Services</li><li>Alzheimer's Association, National Capital Area</li><li>NOVA Medical Education Campus</li><li>NoVA Vision Center</li></ul></div>
+    <div class="card"><h3>Interested, waiting on the date</h3><ul><li>Fairfax County</li><li>HopeLink</li><li>American Diabetes Association</li><li>Susan G. Komen</li><li>APTA Virginia (also a Dec 5 or 12 presentation)</li><li>About 50 more organizations</li></ul><div class="foot"><span class="when">Volunteer roles: setup, booth runner, greeter</span><button class="btn btn-clay btn-sm" data-signup="fair-volunteer">Sign up</button></div></div>
+  </div>
+</section>
+
+<!-- COMPETE -->
+<section class="page" id="compete">
+  <div class="page-head">
+    <span class="eyebrow">Competitive events · 2026–27</span>
+    <h1>Find your event.</h1>
+    <p>Any affiliated member can compete, and you don't need an 8th-period spot. Each member competes in one event per year. If your first pick isn't working out, you can request a switch from the Member Hub.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-clay" data-signup="event-switch">Request an event switch</button><button class="btn btn-line" data-signup="event-interest">Submit event preferences</button></div>
+  </div>
+
+  <div class="season">
+    <div><b>Fall</b><span>Affiliate, pick your event, attend the Oct 3 and Oct 10 virtual meetings.</span></div>
+    <div><b>Nov 18</b><span>Regional Leadership Conference. Mock competition beforehand.</span></div>
+    <div><b>Spring</b><span>Virginia State Leadership Conference. Mock SLC in Feb/Mar.</span></div>
+    <div><b>June 22–25</b><span>International Leadership Conference, Philadelphia.</span></div>
+  </div>
+
+  <div class="section-title"><h2>All events</h2><span class="muted"><span class="team">Team</span> = group event</span></div>
+  <div class="cat-tabs" id="ev-tabs"></div>
+  <div class="events" id="ev-list"></div>
+
+  <div class="section-title"><h2>Your event leads</h2></div>
+  <div class="leads">
+    <div class="lead"><b>Ailee Byington &amp; Sahana Adusumilli</b><span>Competition Directors</span></div>
+    <div class="lead"><b>Chloe Deng</b><span>Health Science</span></div>
+    <div class="lead"><b>Christian Yoo</b><span>Clinical &amp; Health Professions</span></div>
+    <div class="lead"><b>Hiral Jain</b><span>Teamwork &amp; Innovation</span></div>
+    <div class="lead"><b>Maggie He</b><span>Leadership, Communication &amp; Emergency Preparedness</span></div>
+  </div>
+  <div class="note-box">Always check the official <a href="https://hosa.org/guidelines/" target="_blank" rel="noopener">2026–27 HOSA guidelines</a> and Virginia HOSA instructions. Virginia's regional event list can differ from the national program.</div>
+</section>
+
+<!-- CALENDAR -->
+<section class="page" id="calendar">
+  <div class="page-head">
+    <span class="eyebrow">2026–27 calendar</span>
+    <h1>What's coming up</h1>
+    <p>Chapter meetings, opportunity deadlines, and conferences, all on one timeline. Tap an item to sign up or get a reminder.</p>
+  </div>
+  <div id="cal"></div>
+</section>
+
+<!-- HUB -->
+<section class="page" id="hub">
+  <div class="page-head">
+    <span class="eyebrow">Member Hub</span>
+    <h1>Everything you need to do, in one place.</h1>
+    <p>No more digging through ION posts and email threads. Every chapter form lives here.</p>
+  </div>
+  <div class="hub">
+    <div class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>8th-period sign-up</h3><p>About 60 spots each week, first come, first served. Sign-ups open for about two days.</p><div class="foot"><span class="when">Next: Fri, Oct 9</span><button class="btn btn-clay btn-sm" data-signup="eighth">Sign up</button></div></div>
+    <div class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>Switch events</h3><p>Ask to move to a different competitive event. Competition Directors review requests against capacity and team rules.</p><div class="foot"><span class="when">Closes before regional registration</span><button class="btn btn-clay btn-sm" data-signup="event-switch">Request</button></div></div>
+    <div class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>Event preferences</h3><p>Rank your top 3–5 events, tell us whether you'd rather compete solo or on a team, and list teammates.</p><div class="foot"><span class="when">Open</span><button class="btn btn-clay btn-sm" data-signup="event-interest">Submit</button></div></div>
+    <div class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>Log service hours</h3><p>Record hours from chapter events. They count toward Recognition events and X2VOL.</p><div class="foot"><span class="when">Ongoing</span><button class="btn btn-clay btn-sm" data-signup="hours">Log hours</button></div></div>
+    <div class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span>Financial aid</h3><p>If the $25 fee is hard to pay, request help here. Only the treasurer sees your request, and you don't have to explain.</p><div class="foot"><span class="when">Private</span><button class="btn btn-clay btn-sm" data-signup="aid">Request</button></div></div>
+    <div class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>Pitch an event</h3><p>Pitch a workshop, speaker, fundraiser, or service project for 8th period.</p><div class="foot"><span class="when">Open</span><button class="btn btn-clay btn-sm" data-signup="pitch">Pitch</button></div></div>
+    <div class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>Resources</h3><p>The member handbook, event guidelines, prep packets, and recordings of virtual meetings.</p><div class="foot"><span class="when">Members</span><a class="btn btn-line btn-sm" href="https://hosa.org/guidelines/" target="_blank" rel="noopener">Guidelines</a></div></div>
+    <div class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>My sign-ups</h3><p>See every opportunity you signed up for and whether an officer has confirmed it.</p><div class="foot"><span class="when">Planned: sign in with school Google</span><button class="btn btn-line btn-sm" data-signup="mine">Preview</button></div></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="page" id="story">
+  <div class="page-head">
+    <span class="eyebrow">History of TJ HOSA</span>
+    <h1>Shut down by a rule. Brought back by a law.</h1>
+    <p>Most clubs are founded. Ours was founded twice: the second time came after TJ students went to Richmond and changed the rule for every public school in Virginia.</p>
+  </div>
+  <div class="story">
+    <article>
+      <h2>The first chapter</h2>
+      <p>TJ used to have a HOSA chapter. Members competed, studied health careers, and served the community like chapters across the state.</p>
+      <div class="placeholder">[Photo + founding year of the original chapter, and any alumni results]</div>
+
+      <h2>The rule that ended it</h2>
+      <p>Virginia tied career and technical student organizations (CTSOs) like HOSA to career and technical education courses. To have a chapter, a school had to offer a qualifying course. TJ, the state's top science and technology school, didn't offer the qualifying health science course, so the chapter lost its charter.</p>
+      <p>Interest, performance, and the number of students headed into medicine had nothing to do with it. The chapter closed because of one line in an eligibility rule.</p>
+
+      <h2>Going to Richmond</h2>
+      <p>The students didn't ask for an exception for one school. They argued that no school's course catalog should decide whether its students can join a national professional organization. They researched the code section, built the case, and found legislators willing to carry the bill.</p>
+      <div class="placeholder">[Names of the students involved, the bill's patron, and photos from the General Assembly or testimony]</div>
+
+      <div class="quote">“Each public middle school and high school may establish career and technical education student organizations, regardless of whether such school offers career and technical education courses.”<small>Va. Code § 22.1-227.1, as amended by SB 707 · 2024 Acts of Assembly, ch. 776</small></div>
+
+      <h2>What changed</h2>
+      <p>SB 707 was signed on April 8, 2024, and took effect July 1, 2024. It opened HOSA, DECA, FBLA, TSA, SkillsUSA, FCCLA, and Educators Rising to every public middle and high school in Virginia, including the ones that had been locked out.</p>
+
+      <h2>Chartered again</h2>
+      <p>This is why TJ HOSA has no course prerequisite, no application, and no tryout. If you go to TJ, you can join. The students who fixed the rule passed the chapter on to the next class, and the 2026–27 chapter is the first full roster since.</p>
+      <a class="btn btn-clay" href="#join">Be part of the next chapter</a>
+    </article>
+    <aside>
+      <ol class="steps">
+        <li><b>Before</b><span>TJ has a HOSA chapter.</span></li>
+        <li><b>The rule</b><span>CTSO chapters tied to CTE courses. TJ loses its charter.</span></li>
+        <li><b>2023</b><span>TJ students take the case to Richmond.</span></li>
+        <li><b>Apr 8, 2024</b><span>SB 707 signed, Chapter 776.</span></li>
+        <li><b>Jul 1, 2024</b><span>Law takes effect statewide.</span></li>
+        <li><b>2026–27</b><span>TJ HOSA rechartered and open to every TJ student.</span></li>
+      </ol>
+      <div class="note-box">Read the statute: <a href="https://law.lis.virginia.gov/vacode/title22.1/chapter9/section22.1-227.1/" target="_blank" rel="noopener">Va. Code § 22.1-227.1</a></div>
+    </aside>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="page" id="team">
+  <div class="page-head">
+    <span class="eyebrow">2026–27 leadership</span>
+    <h1>The people behind it</h1>
+    <p>Officers were picked through applications and interviews. To reach any of us, email <a href="mailto:tjhssthosa@gmail.com">tjhssthosa@gmail.com</a>.</p>
+  </div>
+  <div id="team-list"></div>
+</section>
+
+<!-- JOIN -->
+<section class="page" id="join">
+  <div class="page-head">
+    <span class="eyebrow">Join TJ HOSA</span>
+    <h1>If you go to TJ, you're eligible.</h1>
+    <p>There's no prerequisite, application, or tryout, and you don't need to be pre-med. You also don't have to compete.</p>
+  </div>
+  <div class="join-grid">
+    <div>
+      <ol class="checklist">
+        <li><div><b>Read the member handbook</b><br><span class="muted">Covers how competition, 8th period, and outside opportunities work.</span></div></li>
+        <li><div><b>Pay the $25 fee or request aid</b><br><span class="muted">Aid requests are handled privately and approved right away.</span></div></li>
+        <li><div><b>Fill out the membership form</b><br><span class="muted">We use it to affiliate you with HOSA and Virginia HOSA.</span></div></li>
+        <li><div><b>Choose how you'll take part</b><br><span class="muted">Compete, come to 8th period, sign up for opportunities, or do all three.</span></div></li>
+      </ol>
+      <button class="btn btn-clay" data-signup="join" style="margin-top:16px">Start membership</button>
+    </div>
+    <div class="fee">
+      <h3>The $25 fee</h3>
+      <table><tr><td>HOSA affiliation</td><td>$17</td></tr><tr><td>Chapter activities</td><td>$8</td></tr><tr><td>Total</td><td>$25</td></tr></table>
+      <p style="margin:0">Money should never keep anyone out of HOSA. If the fee is hard to pay, <a href="#" data-signup="aid">ask for help</a> and we'll cover it.</p>
+      <p style="margin:12px 0 0;font-size:.85rem;opacity:.8">Virginia HOSA affiliation for 2026–27 closes December 18.</p>
+    </div>
+  </div>
+
+  <div class="section-title"><h2>Questions</h2></div>
+  <details><summary>Do I have to compete?</summary><p>No. Competing is one way to take part. You can also come to 8th period, sign up for opportunities, and help run events.</p></details>
+  <details><summary>Do I need an 8th-period spot to compete?</summary><p>No. Any affiliated member can compete. Most competition prep happens outside 8th period, with help from your event lead.</p></details>
+  <details><summary>Can I switch my competitive event?</summary><p>Yes, as long as there's room. Submit a switch request in the Member Hub. Competition Directors check capacity and team rules and get back to you by email.</p></details>
+  <details><summary>How do shadowing and research matches work?</summary><p>For "Match" listings, you submit your interests and resume. Officers choose one student per opening and send a single introduction, which keeps hosts from getting flooded with emails. Please don't contact hosts directly.</p></details>
+  <details><summary>I'm not pre-med. Is this for me?</summary><p>Yes. HOSA has events and opportunities in public health, biomedical engineering, health policy, psych and neuro, nutrition, veterinary science, and more.</p></details>
+  <details><summary>What if I don't get an 8th-period spot?</summary><p>Spots reset every week, so try again at the next sign-up.</p></details>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><b style="font-family:var(--serif);font-size:1.3rem;color:#fff">TJ HOSA</b><p style="margin-top:8px">The HOSA–Future Health Professionals chapter at Thomas Jefferson High School for Science and Technology. Faculty advisor: Mr. Roth.</p><p><a href="mailto:tjhssthosa@gmail.com">tjhssthosa@gmail.com</a> · <a href="https://instagram.com/tjhsst__hosa" target="_blank" rel="noopener">@tjhsst__hosa</a></p></div>
+      <div><h4>Chapter</h4><ul><li><a href="#opportunities">Opportunities</a></li><li><a href="#compete">Compete</a></li><li><a href="#hub">Member Hub</a></li><li><a href="#story">Our Story</a></li></ul></div>
+      <div><h4>HOSA</h4><ul><li><a href="https://hosa.org" target="_blank" rel="noopener">hosa.org</a></li><li><a href="https://virginiahosa.org" target="_blank" rel="noopener">Virginia HOSA</a></li><li><a href="https://hosa.org/guidelines/" target="_blank" rel="noopener">Event guidelines</a></li></ul></div>
+    </div>
+    <div class="fine">This is a student chapter site. It is not an official publication of FCPS, TJHSST, HOSA, or Virginia HOSA. Partner organizations have agreed to work with the chapter, so please send all contact through officers.</div>
+  </div>
+</footer>
+
+<div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <form class="modal" id="m-form">
+    <h3 id="m-title"></h3>
+    <div class="sub" id="m-sub"></div>
+    <div id="m-fields"></div>
+    <div class="actions"><button type="button" class="btn btn-line btn-sm" id="m-cancel">Cancel</button><button type="submit" class="btn btn-clay btn-sm" id="m-submit">Submit</button></div>
+  </form>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ---------- DATA ---------- */
+const OPPS = [
+  // Volunteering
+  {id:"csc",cat:"Volunteering",org:"Children's Science Center",title:"Family Science Night",what:"Run hands-on science stations for families at Parklawn Elementary.",when:"Oct 22",type:"Slot",status:"closed",statusText:"Roster closed · waitlist"},
+  {id:"insight",cat:"Volunteering",org:"Insight Memory Care Center, Fairfax",title:"Memory care companion",what:"Recurring volunteering with adults living with dementia. Room for 1–2 students.",when:"Mon + Fri, from October",type:"Slot",status:"open",statusText:"Open"},
+  {id:"inova-lwc",cat:"Volunteering",org:"Inova Life with Cancer",title:"Collection drive + CureFest",what:"Run a collection drive and volunteer at CureFest.",when:"Fall",type:"Slot",status:"soon",statusText:"Opening soon"},
+  {id:"red-cross",cat:"Volunteering",org:"American Red Cross, NoVA",title:"Red Cross Club + blood drive",what:"Help plan and staff a TJ blood drive with the Red Cross Club.",when:"Date TBD",type:"Slot",status:"soon",statusText:"Opening soon"},
+  {id:"ffo",cat:"Volunteering",org:"Food for Others",title:"Group volunteering",what:"Food distribution shifts as a chapter group.",when:"Date TBD",type:"Slot",status:"list",statusText:"Interest list"},
+  {id:"fcpa",cat:"Volunteering",org:"Fairfax County Park Authority",title:"Group service day",what:"We're choosing from several group options. Your votes decide which one.",when:"Date TBD",type:"Slot",status:"list",statusText:"Interest list"},
+  {id:"ncs",cat:"Volunteering",org:"Fairfax County NCS",title:"Neighborhood & Community Services",what:"Group volunteering coordinated through one chapter point of contact.",when:"Date TBD",type:"Slot",status:"list",statusText:"Interest list"},
+  {id:"sova",cat:"Volunteering",org:"Special Olympics Virginia, Potomac",title:"Event volunteers",what:"Volunteer at Special Olympics competitions in the Potomac region.",when:"Date TBD",type:"Slot",status:"list",statusText:"Interest list"},
+  {id:"brightview",cat:"Volunteering",org:"Brightview Woodburn",title:"Senior living volunteering",what:"Activities and companionship with residents.",when:"Date TBD",type:"Slot",status:"list",statusText:"Interest list"},
+  {id:"volalex",cat:"Volunteering",org:"Volunteer Alexandria",title:"Youth opportunities",what:"Individual openings listed on Volunteer Alexandria's own site.",when:"Ongoing",type:"Apply",status:"open",statusText:"Open",link:"https://www.volunteeralexandria.org/"},
+  {id:"cert",cat:"Volunteering",org:"Fairfax CERT",title:"Stop the Bleed training",what:"Bleeding-control certification training for members.",when:"Target: December",type:"Slot",status:"soon",statusText:"Scheduling"},
+  // Shadowing
+  {id:"animal-dental",cat:"Shadowing",org:"Animal Dental Clinic, Vienna",title:"Veterinary dental shadowing",what:"Shadow a veterinary dentist.",when:"Rolling",type:"Slot",status:"open",statusText:"Open"},
+  {id:"chiro",cat:"Shadowing",org:"Dr. Wendy Jacobs, South Arlington",title:"Chiropractic shadowing",what:"Shadow a chiropractor in practice.",when:"Rolling",type:"Slot",status:"open",statusText:"Open"},
+  {id:"acnm",cat:"Shadowing",org:"American College of Nurse-Midwives",title:"Midwifery talk + connection",what:"A Zoom talk with a certified nurse-midwife, plus one-on-one connections.",when:"Oct 16, Oct 30, or Nov 4",type:"Slot",status:"open",statusText:"Open"},
+  {id:"howard-micro",cat:"Shadowing",org:"Howard University Microbiology",title:"Summer shadowing",what:"Lab shadowing over the summer, with no wet-lab work.",when:"Summer 2027",type:"Match",status:"open",statusText:"Open"},
+  {id:"gmu-map",cat:"Shadowing",org:"GMU Mason and Partners (MAP) Clinics",title:"Clinic experience",what:"Spend time in GMU's community health clinics.",when:"TBD",type:"Match",status:"soon",statusText:"Opening soon"},
+  {id:"inova-pharm",cat:"Shadowing",org:"Inova Clinical Pharmacy",title:"Pharmacy exposure",what:"See what clinical pharmacists do in a hospital.",when:"TBD",type:"Slot",status:"list",statusText:"Interest list"},
+  {id:"healthworks",cat:"Shadowing",org:"HealthWorks for Northern Virginia",title:"Holiday shadowing",what:"Shadowing at a community health center on student holidays.",when:"Student holidays",type:"Slot",status:"list",statusText:"Interest list"},
+  {id:"nutrition",cat:"Shadowing",org:"Virginia Academy of Nutrition and Dietetics",title:"Clinical dietitian shadowing",what:"Shadow a clinical dietitian.",when:"TBD",type:"Slot",status:"list",statusText:"Interest list"},
+  // Research
+  ...[
+    ["dejonge","Dr. Lilian de Jonge","GMU Nutrition","Nutrition research lab.","Rolling","Match"],
+    ["raffegeau","Dr. Tiphanie Raffegeau","GMU Kinesiology","Unpaid, 6+ hrs/week, signed volunteer contract.","Rolling","Match"],
+    ["basiri","Dr. Raedeh Basiri","GMU Nutrition","1–2 students, 5+ hrs/week, mornings.","Rolling","Match"],
+    ["tang","Dr. Jinshan Tang","GMU","Volunteer role, best for students with ML background.","Rolling","Match"],
+    ["rezai","Dr. Pouya Rezai","GMU","Looking for strong, committed students, 10–15 hrs/week.","Rolling","Match"],
+    ["herin","Dr. Gerald Herin","GMU Neuroscience","Has hosted many high schoolers, including TJ students.","Rolling","Match"],
+    ["pollack","Dr. Anna Pollack","GMU Public Health","Open to students. Zoom on Tuesdays after 6pm.","Rolling","Match"],
+    ["peixoto","Dr. Nathalia Peixoto","GMU","Internships plus mentorship.","Rolling","Match"],
+    ["limaye","Dr. Rachel Limaye","GMU","Wants to start with a faculty meeting with the chapter.","Chapter meeting first","Match"],
+    ["chitnis","Dr. Parag Chitnis","GMU Bioengineering","Year-long off-site project, arranged through a TJ teacher.","School year","Apply"],
+    ["cho","Dr. Junghun Cho","GWU MRI","1–2 summer interns, 3+ hrs/day. One-page application.","Apply by Mar 31","Apply"],
+    ["sarkar","Dr. Kausik Sarkar","GWU","Takes summer interns every year. Reach out before summer.","Summer","Match"],
+    ["prakash","Dr. Punit Prakash","GWU","Occasional openings.","Rolling","Match"],
+    ["greenwald","Dr. Anna Greenwald","Georgetown","Monthly journal club.","Monthly","Slot"],
+    ["riesenhuber","Dr. Max Riesenhuber","Georgetown","One student per year, summer, continuing into the school year.","Apply by Mar 1","Apply"],
+    ["striem","Dr. Ella Striem-Amit","Georgetown","Unpaid part-time or summer research assistant.","Rolling","Match"],
+    ["hudson","Dr. Thomas Hudson","Howard Pharmacology","Summer and school year.","Rolling","Match"],
+    ["heinbockel","Dr. Thomas Heinbockel","Howard Anatomy","Takes high schoolers. Summer is easier.","Summer","Match"],
+    ["kaur","Dr. Gagandeep Kaur","Howard Chemistry","Summer lab visits and research.","Summer","Match"],
+    ["lee","Dr. D. Lee","Howard Physiology","Has hosted high schoolers before.","Rolling","Match"],
+    ["wang","Dr. Xiang Wang","Howard + Synagentics","Introduction to AI drug discovery.","Rolling","Match"],
+    ["choy","Dr. Choy","Catholic University","Has mentored TJ students. AI work.","Rolling","Match"],
+    ["konaklieva","Dr. Konaklieva","American University","University hosts high schoolers and can refer you to colleagues.","Rolling","Match"],
+    ["singh","Dr. Ankit Singh","Univ. of Delaware","Computational work, remote OK.","Rolling · Remote","Match"],
+    ["deng","Dr. Yixiang Deng","Univ. of Delaware","ML for glucose prediction.","Rolling · Remote","Match"],
+    ["thakor","Dr. Nitish Thakor","Johns Hopkins","Several high schoolers each summer.","Summer","Match"],
+    ["ramesh","Dr. K.T. Ramesh","Johns Hopkins","In-person only, for independent students. Reach out in December for an August 2027 start.","Interest due Dec","Match"],
+    ["acharya","Dr. Soumya Acharya","JHU CBID","AI, hardware, and malaria. Wants CAD and Python skills.","Rolling","Match"],
+    ["bala","Dr. Sriram Balasubramanian","Drexel","Summer 2027, 3–4 weeks, $500/week fee.","Apply in Jan","Apply"],
+    ["wiener","Dr. Martin Wiener / Dr. Igor Aronson","GMU / Penn State","Possible summer placement.","Summer","Match"],
+    ["gan","Dr. Yu Gan","UMD","For exceptional students only.","Rolling","Match"]
+  ].map(([id,pi,inst,what,when,type])=>({id,cat:"Research",org:inst,title:pi,what,when,type,status:"open",statusText:"Open"})),
+  // Programs
+  {id:"phya",cat:"Programs",org:"Fairfax County Health Department",title:"Public Health Youth Ambassadors",what:"Spring 2027 cohort, open to any Fairfax County high schooler. Seats are limited and classes start mid-January.",when:"Apply Nov 20 – Dec 11",type:"Apply",status:"soon",statusText:"Opens Nov 20"},
+  {id:"inova-lung",cat:"Programs",org:"Inova",title:"Advanced Lung Disease Summer Internship",what:"Our chapter is on the distribution list.",when:"Apps out Nov 1",type:"Apply",status:"soon",statusText:"Opens Nov 1"},
+  {id:"usu",cat:"Programs",org:"Uniformed Services University",title:"USU Summer Scholars",what:"Applications go through Zintellect. Line up recommendations and look at USU labs early.",when:"Opens late Nov",type:"Apply",status:"soon",statusText:"Opens late Nov"},
+  {id:"colaco",cat:"Programs",org:"Children's National",title:"Colaco Scholars",what:"Open to DMV students. Requires a transcript, a science teacher rec, and a statement. Paid stipend.",when:"Due early Mar · interviews Mar",type:"Apply",status:"soon",statusText:"Form late 2026"},
+  {id:"hsap",cat:"Programs",org:"Army HSAP · USAMRICD, Edgewood MD",title:"High School Apprenticeship Program",what:"Ages 16+, US citizens, must be near Edgewood. Runs Jun 28 – Aug 19.",when:"Apply Jan 1 – Mar 31",type:"Apply",status:"soon",statusText:"Opens Jan 1"},
+  {id:"nih",cat:"Programs",org:"NIH (CBIIT, DCCPS, NHLBI, others)",title:"NIH Summer Internship Program",what:"For graduating seniors only, who must turn 18 by Sept 30, 2027.",when:"Winter",type:"Apply",status:"soon",statusText:"Winter"},
+  {id:"assip",cat:"Programs",org:"George Mason University",title:"Aspiring Scientists Summer Internship (ASSIP)",what:"The program GMU faculty recommend most often.",when:"Winter",type:"Apply",status:"soon",statusText:"Winter"},
+  {id:"umb",cat:"Programs",org:"UMB Institute for Genome Sciences",title:"HS Bioinformatics",what:"Open to NoVA students.",when:"TBD",type:"Apply",status:"list",statusText:"TBD"},
+  {id:"school2lab",cat:"Programs",org:"Howard University",title:"School2Lab",what:"Wet and dry lab summer program.",when:"Summer",type:"Apply",status:"soon",statusText:"Summer"},
+  {id:"umd",cat:"Programs",org:"University of Maryland",title:"SPARC / PRIME-R",what:"We've asked whether Virginia students are eligible.",when:"Spring/Summer 2027",type:"Apply",status:"list",statusText:"Checking eligibility"},
+  {id:"more",cat:"Programs",org:"JHU · Janelia · Rutgers",title:"JHU BME iSPEED, Janelia, Rutgers pre-college",what:"More summer options. For Janelia, apply through Dr. Erik Snapp.",when:"Varies",type:"Apply",status:"list",statusText:"Varies"}
+];
+
+const EVENTS = {
+  "Health Science":["Behavioral Health","Biomedical Equipment Technician","Dental Terminology","Health Informatics","Healthcare Administration","Human Growth and Development","Medical Law and Ethics","Medical Math","Medical Reading","Medical Spelling","Medical Terminology","Nutrition","Pathophysiology","Pharmacology","World Health and Disparities"],
+  "Health Professions":["Biotechnology","Clinical Lab Science","Clinical Nursing","Clinical Specialty","Dental Science","Family Medicine Physician","Home Health Aide","Genetics","Medical Assisting","Nursing Assisting","Occupational Therapy","Personal Care","Pharmacy Science","Phlebotomy","Physical Therapy","Physician Assistant – Medical Case Challenge*","Sports Medicine","Surgical Technologist","Veterinary Science"],
+  "Emergency Preparedness":["CERT Skills*","CPR/First Aid*","Emergency Medical Technician*","Epidemiology","Life Support Skills","Mental Health Promotion*","MRC Partnership*","Public Health*"],
+  "Leadership":["Extemporaneous Writing – Health Policy","Health Career Photography","Healthy Living","Interviewing Skills","Job Seeking Skills","Organizational Leadership","Prepared Speaking","Researched Persuasive Writing and Speaking","Speaking Skills"],
+  "Teamwork":["Biomedical Debate*","Community Awareness*","Creative Problem Solving*","Forensic Science*","Health Career Display*","Health Education*","HOSA Bowl*","Medical Innovation*","Parliamentary Procedure*","Public Service Announcement*","Research Poster*"],
+  "Academic Testing":["Allied Health Statistics","Anatomy and Physiology","Biochemistry","Biology","Career Development","Environmental Health","General Chemistry","Human Heredity","Math for Health Professionals","Microbiology","Organic Chemistry","Physics","AAFP Family Medicine Career Test","Leadership","Occupational Safety and Health"]
+};
+
+const CAL = [
+  {d:"2026-10-09",t:"Chapter meeting #3",s:"8th period · cross-club event planning kicks off",signup:"eighth"},
+  {d:"2026-10-10",t:"Competition & logistics virtual meeting",s:"Mandatory for competitors. A recording will be posted."},
+  {d:"2026-10-16",t:"Nurse-midwife Zoom talk (ACNM)",s:"Shadowing · also Oct 30 and Nov 4",signup:"acnm"},
+  {d:"2026-10-22",t:"Family Science Night",s:"Children's Science Center · Parklawn Elementary",signup:"csc"},
+  {d:"2026-10-31",t:"Regional logistics finalized",s:"Watch email for travel and schedule"},
+  {d:"2026-11-01",t:"Inova Lung Disease internship apps open",s:"Programs",signup:"inova-lung"},
+  {d:"2026-11-04",t:"Nurse-midwife Zoom talk (last date)",s:"ACNM",signup:"acnm"},
+  {d:"2026-11-18",t:"Regional Leadership Conference",s:"First competition of the season"},
+  {d:"2026-11-20",t:"Public Health Youth Ambassadors apps open",s:"Closes Dec 11",signup:"phya"},
+  {d:"2026-11-25",t:"USU Summer Scholars opens (approx.)",s:"Get recs lined up now",signup:"usu"},
+  {d:"2026-12-01",t:"Health Careers Networking Night",s:"Nov/Dec · panel, then rotating small groups",signup:"networking"},
+  {d:"2026-12-05",t:"APTA Virginia presentation",s:"Dec 5 or 12, date TBD"},
+  {d:"2026-12-10",t:"Stop the Bleed training",s:"Fairfax CERT · target date",signup:"cert"},
+  {d:"2026-12-11",t:"PHYA applications close",s:"Fairfax County",signup:"phya"},
+  {d:"2026-12-18",t:"Virginia HOSA affiliation closes",s:"Last day to be on the roster this year",signup:"join"},
+  {d:"2027-01-01",t:"Army HSAP applications open",s:"Through Mar 31",signup:"hsap"},
+  {d:"2027-01-16",t:"Community Health Fair",s:"Saturday in January, date pending",signup:"fair-volunteer"},
+  {d:"2027-02-20",t:"Mock SLC",s:"Feb/Mar · practice with outside judges"},
+  {d:"2027-03-01",t:"Riesenhuber lab application due",s:"Georgetown",signup:"riesenhuber"},
+  {d:"2027-03-31",t:"GWU MRI lab + Army HSAP deadline",s:"Research / Programs",signup:"cho"},
+  {d:"2027-06-22",t:"International Leadership Conference",s:"Philadelphia · June 22–25"}
+];
+
+const TEAM = [
+  ["Executive Board",[["Raashi Shah","Co-President"],["Liam Gandhi","Co-President"],["Pranav Arun Pillai","VP of Outreach"],["Aavyan Tendulkar","VP of Treasury"],["Moniyat Rahee","VP of Logistics"],["Emily Tran","VP of Education"]]],
+  ["Competition",[["Ailee Byington","Competition Director"],["Sahana Adusumilli","Competition Director"],["Chloe Deng","Health Science Lead"],["Christian Yoo","Clinical & Health Professions Lead"],["Hiral Jain","Teamwork & Innovation Lead"],["Maggie He","Leadership, Communication & EP Lead"]]],
+  ["Activities & Media",[["Rithik Samanthula","Activities Director"],["Athmika Sivaramakrishnan","Activities Coordinator"],["Jayden Flannagan","Activities Coordinator"],["Jinger Xu","Activities Coordinator"],["Izzy Zhao","Social Media Manager"]]],
+  ["Faculty",[["Mr. Mike Roth","Faculty Advisor"]]]
+];
+
+/* ---------- HELPERS ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = (d,o) => new Date(d+"T12:00:00").toLocaleDateString("en-US",o);
+const BTN = {Slot:"Claim a spot",Match:"Submit interest",Apply:"Get reminders"};
+
+/* ---------- ROUTER ---------- */
+function route(){
+  const id = (location.hash||"#home").slice(1);
+  const page = document.getElementById(id) && document.getElementById(id).classList.contains("page") ? id : "home";
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===page));
+  document.querySelectorAll("nav.tabs a").forEach(a=>{ if(a.getAttribute("href")==="#"+page) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  $("#tabs").classList.remove("open");
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+$(".menu-btn").addEventListener("click",e=>{const o=$("#tabs").classList.toggle("open");e.currentTarget.setAttribute("aria-expanded",o)});
+
+/* ---------- OPPORTUNITIES ---------- */
+let curCat="All";
+function renderChips(){
+  const cats=["All","Volunteering","Shadowing","Research","Programs"];
+  $("#cat-chips").innerHTML=cats.map(c=>{
+    const n=c==="All"?OPPS.length:OPPS.filter(o=>o.cat===c).length;
+    return `<button class="chip" aria-pressed="${c===curCat}" data-cat="${c}">${c}<span class="n">${n}</span></button>`;
+  }).join("");
+}
+function renderOpps(){
+  const q=$("#opp-search").value.toLowerCase().trim(), t=$("#type-filter").value;
+  const order={open:0,soon:1,list:2,closed:3};
+  const list=OPPS.filter(o=>(curCat==="All"||o.cat===curCat)&&(!t||o.type===t)&&(!q||[o.org,o.title,o.what,o.when,o.cat].join(" ").toLowerCase().includes(q)))
+    .sort((a,b)=>order[a.status]-order[b.status]);
+  $("#opp-grid").innerHTML=list.length?list.map(o=>`
+    <article class="card">
+      <div class="top"><div><h3>${esc(o.title)}</h3><div class="org">${esc(o.org)}</div></div><span class="status ${o.status}">${esc(o.statusText)}</span></div>
+      <p>${esc(o.what)}</p>
+      <div class="meta"><span class="tag cat-${o.cat}">${o.cat}</span><span class="tag">${o.type}</span></div>
+      <div class="foot"><span class="when">${esc(o.when)}</span><button class="btn ${o.status==="open"?"btn-clay":"btn-line"} btn-sm" data-signup="${o.id}">${o.status==="closed"?"Join waitlist":o.status==="list"?"Join interest list":BTN[o.type]}</button></div>
+    </article>`).join(""):`<div class="empty">Nothing matches that search. Try a broader term.</div>`;
+}
+$("#cat-chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;curCat=b.dataset.cat;renderChips();renderOpps()});
+$("#opp-search").addEventListener("input",renderOpps);
+$("#type-filter").addEventListener("change",renderOpps);
+
+/* ---------- EVENTS ---------- */
+let curEv="Health Science";
+function renderEvents(){
+  $("#ev-tabs").innerHTML=Object.keys(EVENTS).map(c=>`<button class="chip" aria-pressed="${c===curEv}" data-ev="${c}">${c}<span class="n">${EVENTS[c].length}</span></button>`).join("");
+  $("#ev-list").innerHTML=EVENTS[curEv].map(e=>{const team=e.endsWith("*");return `<div class="ev"><span>${esc(team?e.slice(0,-1):e)}</span>${team?'<span class="team">Team</span>':""}</div>`}).join("");
+}
+$("#ev-tabs").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;curEv=b.dataset.ev;renderEvents()});
+const ALL_EVENTS=Object.values(EVENTS).flat().map(e=>e.replace("*",""));
+
+/* ---------- CALENDAR ---------- */
+function renderCal(){
+  let html="",m="";
+  CAL.forEach(c=>{
+    const mm=fmt(c.d,{month:"long",year:"numeric"});
+    if(mm!==m){if(m)html+="</ul>";html+=`<div class="month">${mm}</div><ul class="timeline">`;m=mm}
+    html+=`<li><div class="date-chip"><small>${fmt(c.d,{month:"short"})}</small>${fmt(c.d,{day:"numeric"})}</div><div class="body" style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap"><div><b>${esc(c.t)}</b><span>${esc(c.s)}</span></div>${c.signup?`<button class="btn btn-line btn-sm" data-signup="${c.signup}">Sign up</button>`:""}</div></li>`;
+  });
+  $("#cal").innerHTML=html+"</ul>";
+  const today=new Date("2026-10-04T00:00:00");
+  $("#home-next").innerHTML=CAL.filter(c=>new Date(c.d+"T12:00:00")>=today).slice(0,4).map(c=>`<li><div class="date-chip"><small>${fmt(c.d,{month:"short"})}</small>${fmt(c.d,{day:"numeric"})}</div><div><b>${esc(c.t)}</b><span>${esc(c.s)}</span></div></li>`).join("");
+}
+
+/* ---------- TEAM ---------- */
+function renderTeam(){
+  const colors=["#B4562E","#6E7C59","#C8923A","#8A6A4B","#94431F"];
+  $("#team-list").innerHTML=TEAM.map(([g,ppl])=>`<h3 class="team-h">${g}</h3><div class="team-grid">${ppl.map(([n,r],i)=>`<div class="person"><div class="avatar" style="background:${colors[(n.length+i)%colors.length]}">${n.replace("Mr. ","").split(" ").map(w=>w[0]).slice(0,2).join("")}</div><b>${esc(n)}</b><span>${esc(r)}</span></div>`).join("")}</div>`).join("");
+}
+
+/* ---------- SIGN-UP MODAL ---------- */
+const base=`<div class="row"><div><label>Full name</label><input required></div><div><label>Grade</label><select><option>9</option><option>10</option><option>11</option><option>12</option></select></div></div><label>School or personal email</label><input type="email" required>`;
+const FORMS={
+  eighth:{t:"8th-period sign-up",s:"Friday, Oct 9 · about 60 spots · paid members only",f:base+`<label>Activity preference</label><select><option>Guest speaker</option><option>Health Fair committee</option><option>Cross-club event planning</option></select>`},
+  "event-switch":{t:"Request an event switch",s:"Competition Directors review each request against capacity and team rules.",f:base+`<label>Current event</label><select>${ALL_EVENTS.map(e=>`<option>${e}</option>`).join("")}</select><label>Event you want</label><select>${ALL_EVENTS.map(e=>`<option>${e}</option>`).join("")}</select><label>Teammates affected (if a team event)</label><input placeholder="Names, or none"><label>Why are you switching?</label><textarea></textarea><div class="info">Team events: every teammate has to agree before we can approve a switch. You'll hear back by email within a week.</div>`},
+  "event-interest":{t:"Event preferences",s:"Rank your top picks. Ranking an event doesn't guarantee you a spot in it.",f:base+[1,2,3].map(i=>`<label>Choice ${i}</label><select>${ALL_EVENTS.map(e=>`<option>${e}</option>`).join("")}</select>`).join("")+`<label>Solo or team?</label><select><option>Either</option><option>Individual</option><option>Team</option></select><label>Preferred teammates</label><input>`},
+  hours:{t:"Log service hours",s:"Hours are checked against the event roster.",f:base+`<label>Event</label><select>${OPPS.filter(o=>o.cat==="Volunteering").map(o=>`<option>${esc(o.title)}</option>`).join("")}</select><div class="row"><div><label>Date</label><input type="date"></div><div><label>Hours</label><input type="number" min="0" step=".5"></div></div>`},
+  aid:{t:"Financial aid request",s:"Only the VP of Treasury sees this request. You don't need to explain anything.",f:base+`<label>Anything you want us to know (optional)</label><textarea></textarea>`},
+  pitch:{t:"Pitch an event",s:"Workshops, speakers, fundraisers, or service projects.",f:base+`<label>Idea</label><input><label>What would members do?</label><textarea></textarea>`},
+  join:{t:"Start your membership",s:"Then pay the $25 fee on MySchoolBucks or request aid.",f:base+`<label>How do you want to take part?</label><select multiple size="4"><option>Compete</option><option>8th-period activities</option><option>Outside opportunities</option><option>Leadership / committees</option></select>`},
+  "fair-volunteer":{t:"Health Fair volunteer",s:"Saturday in January · date pending venue",f:base+`<label>Role</label><select><option>Setup / teardown</option><option>Booth runner</option><option>Greeter</option><option>Run a health screening station</option></select>`},
+  "cross-club":{t:"Cross-club event",s:"We'll email you when the date is set.",f:base},
+  networking:{t:"Health Careers Networking Night",s:"Nov/Dec · panel + rotating small groups",f:base+`<label>Fields you want to meet</label><input placeholder="e.g. surgery, public health, biotech">`},
+  "host-interest":{t:"Which hosts do you want?",s:"This tells officers where to focus outreach.",f:base+`<label>Fields</label><select multiple size="6"><option>Dentistry</option><option>Hospital</option><option>Physical therapy</option><option>Veterinary</option><option>Family medicine</option><option>Radiology</option><option>Physician assistant</option><option>Urgent care</option></select>`},
+  mine:{t:"My sign-ups",s:"Preview of the planned member view",f:`<div class="note-box" style="margin:0"><b>Memory care companion</b> · Confirmed ✓<br><b>Nurse-midwife Zoom talk</b> · Pending officer confirmation<br><b>Dr. Raedeh Basiri lab</b> · Interest submitted, matching in progress</div>`,noSubmit:true}
+};
+function oppForm(o){
+  let f=base;
+  if(o.type==="Slot") f+=`<label>Availability</label>${/Oct 16/.test(o.when)?`<select><option>Oct 16</option><option>Oct 30</option><option>Nov 4</option></select>`:`<input placeholder="Days and times you're free">`}<div class="info">An officer will confirm your spot by email. Once you're confirmed, we're counting on you to show up.</div>`;
+  if(o.type==="Match") f+=`<label>Why this ${o.cat==="Research"?"lab":"placement"}?</label><textarea required></textarea><label>Resume link (Google Drive)</label><input type="url" placeholder="https://"><label>Relevant skills</label><input placeholder="Python, wet lab, CAD…"><div class="info">Officers choose one student per opening and send a single introduction. <b>Please don't email the host yourself.</b></div>`;
+  if(o.type==="Apply") f+=`<div class="info">You'll apply directly. We'll email you reminders before <b>${esc(o.when)}</b>.${o.link?` <a href="${o.link}" target="_blank" rel="noopener">Go to their site →</a>`:""}</div>`;
+  return {t:o.title,s:`${o.org} · ${o.when}`,f};
+}
+let lastFocus=null;
+function openForm(key){
+  const o=OPPS.find(x=>x.id===key);
+  const cfg=o?oppForm(o):FORMS[key];
+  if(!cfg)return;
+  lastFocus=document.activeElement;
+  $("#m-title").textContent=cfg.t;$("#m-sub").textContent=cfg.s;$("#m-fields").innerHTML=cfg.f;
+  $("#m-submit").style.display=cfg.noSubmit?"none":"";
+  $("#modal").classList.add("open");
+  const first=$("#m-fields input,#m-fields select,#m-fields textarea");(first||$("#m-cancel")).focus();
+}
+function closeForm(){$("#modal").classList.remove("open");lastFocus&&lastFocus.focus()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-signup]");if(b){e.preventDefault();openForm(b.dataset.signup)}});
+$("#m-cancel").addEventListener("click",closeForm);
+$("#modal").addEventListener("click",e=>{if(e.target.id==="modal")closeForm()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#modal").classList.contains("open"))closeForm()});
+$("#m-form").addEventListener("submit",e=>{e.preventDefault();closeForm();toast("Preview only: once this is live, your response saves to the chapter's sign-up sheet and you get a confirmation email.")});
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),3800)}
+
+/* ---------- INIT ---------- */
+$("#stat-opps").textContent=OPPS.filter(o=>o.status==="open").length;
+$("#stat-labs").textContent=OPPS.filter(o=>o.cat==="Research").length;
+renderChips();renderOpps();renderEvents();renderCal();renderTeam();route();
+</script>
 </body>
 </html>
